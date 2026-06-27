@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: Create dist archive
+        run: |
+          cd dist
+          zip -r ../gemvault-${{ github.ref_name }}.zip .
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: gemvault-${{ github.ref_name }}.zip
+          generate_release_notes: true

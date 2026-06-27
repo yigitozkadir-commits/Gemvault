@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.production
+coverage/
+playwright-report/
+test-results/
+*.log
+.DS_Store
+android/android.keystore

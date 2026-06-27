@@ -1,0 +1,43 @@
+#sidebarFavs{display:none;flex-direction:column;flex:1}
+.fav-section{border-bottom:1px solid var(--border)}
+.fav-section-hdr{padding:7px 14px 4px;display:flex;align-items:center;justify-content:space-between}
+.fav-section-label{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:var(--text4)}
+.fav-add-col-btn{font-family:'DM Mono',monospace;font-size:9px;color:var(--gold);background:none;border:none;cursor:pointer;letter-spacing:.07em;transition:all var(--tr);padding:3px 8px;border-radius:var(--radius);border:1px solid transparent}
+.fav-add-col-btn:hover{opacity:.8;border-color:var(--gold-glow);background:var(--gold-dim)}
+.fav-empty{padding:24px 14px;font-family:'DM Mono',monospace;font-size:10px;color:var(--text4);text-align:center;letter-spacing:.09em}
+.col-item{border-bottom:1px solid var(--border)}
+.col-hdr{display:flex;align-items:center;gap:8px;padding:7px 11px;cursor:pointer;transition:background var(--tr-fast);border-left:2px solid transparent}
+.col-hdr:hover{background:var(--bg3)}
+.col-hdr.open{border-left-color:var(--gold);background:var(--bg3)}
+.col-chevron{font-size:9px;color:var(--text4);transition:transform .2s cubic-bezier(0.4,0,0.2,1);user-select:none}
+.col-chevron.open{transform:rotate(90deg)}
+.col-name{font-family:'Instrument Sans',sans-serif;font-size:12px;color:var(--text);flex:1}
+.col-count{font-family:'DM Mono',monospace;font-size:9px;color:var(--text4);background:var(--bg4);padding:2px 6px;border-radius:8px;border:1px solid var(--border)}
+.col-del-btn{font-size:10px;color:var(--text4);background:none;border:none;cursor:pointer;opacity:0;transition:all var(--tr-fast);padding:2px 5px;border-radius:4px}
+.col-hdr:hover .col-del-btn{opacity:1}
+.col-del-btn:hover{color:#d47d7d;background:#d47d7d15}
+.col-body{display:none;padding:3px 6px 6px}
+.col-body.open{display:block}
+.fav-gem-item{display:flex;align-items:flex-start;gap:7px;padding:7px 8px;border-radius:var(--radius);cursor:pointer;border:1px solid transparent;transition:all var(--tr-fast);margin-bottom:2px;position:relative}
+.fav-gem-item:hover{background:var(--bg3);border-color:var(--border)}
+.fav-gem-item .fav-rm{position:absolute;right:7px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--text4);background:none;border:none;cursor:pointer;opacity:0;transition:all var(--tr-fast);padding:2px 6px;border-radius:4px}
+.fav-gem-item:hover .fav-rm{opacity:1}
+.fav-gem-item .fav-rm:hover{color:#d47d7d;background:#d47d7d15}
+.fav-heart-btn{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:8px 14px;font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);cursor:pointer;transition:all var(--tr);display:flex;align-items:center;gap:7px;letter-spacing:.07em}
+.fav-heart-btn:hover{border-color:var(--border3);color:var(--text);background:var(--bg4)}
+.fav-heart-btn.active{background:color-mix(in srgb,#e05a7a 10%,transparent);border-color:#e05a7a40;color:#e05a7a;box-shadow:0 0 16px #e05a7a15}
+.fav-modal-overlay{position:fixed;inset:0;background:#00000090;z-index:500;display:flex;align-items:center;justify-content:center;animation:fadeUp .2s ease;backdrop-filter:blur(4px)}
+.fav-modal{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:28px;min-width:300px;max-width:380px;width:90%;box-shadow:var(--shadow-lg)}
+.fav-modal-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--text);margin-bottom:18px}
+.fav-modal input{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:10px 14px;color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:13px;margin-bottom:16px;transition:all var(--tr)}
+.fav-modal input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px var(--gold-dim)}
+.fav-modal-btns{display:flex;gap:9px;justify-content:flex-end}
+.fav-modal-ok{background:linear-gradient(135deg,var(--gold),#b8902e);color:#060608;border:none;border-radius:var(--radius);padding:9px 20px;font-family:'DM Mono',monospace;font-size:10px;font-weight:600;cursor:pointer;letter-spacing:.09em;transition:all var(--tr);text-transform:uppercase;box-shadow:0 2px 12px #c9a84c20}
+.fav-modal-ok:hover{box-shadow:0 4px 20px #c9a84c35;transform:translateY(-1px)}
+.fav-modal-cancel{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--radius);padding:9px 16px;font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);cursor:pointer;transition:all var(--tr)}
+.fav-modal-cancel:hover{background:var(--bg4);border-color:var(--border3);color:var(--text)}
+.fav-col-picker{position:absolute;z-index:300;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius-lg);min-width:210px;box-shadow:var(--shadow-lg);overflow:hidden;animation:fadeUp .18s ease;backdrop-filter:blur(8px)}
+.fav-col-picker-item{padding:9px 16px;font-family:'Instrument Sans',sans-serif;font-size:12px;color:var(--text2);cursor:pointer;transition:background var(--tr-fast);display:flex;align-items:center;gap:9px}
+.fav-col-picker-item:hover{background:var(--bg3);color:var(--text)}
+.fav-col-picker-item .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;box-shadow:0 0 6px #c9a84c60}
+.fav-col-picker-new{border-top:1px solid var(--border);color:var(--gold);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.07em}

@@ -1,0 +1,28 @@
+@import './_tokens.css';
+@import './_reset.css';
+@import './_animations.css';
+@import './components/hero.css';
+@import './components/sidebar.css';
+@import './components/gem-list.css';
+@import './components/gem-detail.css';
+@import './components/all-grid.css';
+@import './components/gen-panel.css';
+@import './components/pte.css';
+@import './components/similar.css';
+@import './components/favorites.css';
+@import './components/export.css';
+@import './components/radar.css';
+@import './components/modals.css';
+@import './components/toast.css';
+@import './components/molo.css';
+@import './components/footer.css';
+@import './_responsive.css';
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,9 @@
+.all-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:10px;padding:24px 44px}
+.all-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:15px;cursor:pointer;transition:all var(--tr);border-top:2px solid var(--cc);position:relative;overflow:hidden}
+.all-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,color-mix(in srgb,var(--cc) 4%,transparent),transparent);opacity:0;transition:opacity var(--tr)}
+.all-card:hover{background:var(--bg3);border-color:var(--border2);transform:translateY(-3px);box-shadow:0 12px 32px #00000060,0 0 24px color-mix(in srgb,var(--cc) 8%,transparent)}
+.all-card:hover::before{opacity:1}
+.all-card .gno{font-family:'DM Mono',monospace;font-size:9px;color:var(--cc);background:color-mix(in srgb,var(--cc) 10%,transparent);padding:2px 7px;border-radius:3px;display:inline-block;margin-bottom:8px;border:1px solid color-mix(in srgb,var(--cc) 20%,transparent)}
+.all-card h3{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:var(--text);margin-bottom:5px;line-height:1.2}
+.all-card p{font-size:11px;color:var(--text3);line-height:1.45}
+  .all-grid,.gen-panel{padding:16px 20px}

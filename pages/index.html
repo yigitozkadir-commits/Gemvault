@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GemVault Pro — 735 Gemini Gem</title>
+  <meta name="description" content="18 kategoride 735 ileri seviye Gemini Gem talimatı. AI destekli arama, dinamik talimat üretimi.">
+  <meta name="theme-color" content="#080808">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://generativelanguage.googleapis.com https://r.jina.ai https://api.allorigins.win; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; worker-src 'self';">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="/src/styles/fonts.css">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="app">
+    <header class="hero" id="heroSection"></header>
+    <div class="api-banner" id="apiBarSection"></div>
+    <div class="inst-banner" id="instBanner">
+      <span style="margin-right:4px">Nasıl kullanılır →</span>
+      <div class="inst-step"><span class="inst-num">1</span>gemini.google.com aç</div><span class="inst-arr">›</span>
+      <div class="inst-step"><span class="inst-num">2</span>Gem Manager → New Gem</div><span class="inst-arr">›</span>
+      <div class="inst-step"><span class="inst-num">3</span>AI talimatı üret &amp; kopyala</div><span class="inst-arr">›</span>
+      <div class="inst-step"><span class="inst-num">4</span>Kaydet → Kullan</div>
+    </div>
+    <div class="app">
+      <aside class="sidebar" id="sidebarSection"></aside>
+      <main class="main" id="mainContent">
+        <div class="empty" id="emptyState">
+          <div class="glyph">◇</div>
+          <p>Sol taraftan bir Gem seç</p>
+        </div>
+        <div id="gemDetail" style="display:none"></div>
+        <div id="allGrid" style="display:none"></div>
+        <div id="genPanel" style="display:none"></div>
+        <div id="radarPanel" style="display:none"></div>
+      </main>
+    </div>
+    <footer class="footer" id="footerSection"></footer>
+  </div>
+  <button class="scroll-top" id="scrollTop" aria-label="Yukarı kaydır">↑</button>
+  <div id="toast-region" role="region" aria-live="polite" aria-label="Bildirimler"></div>
+  <div id="a11y-live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

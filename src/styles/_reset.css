@@ -1,0 +1,18 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:14px;line-height:1.6;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.5}
+body::after{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#c9a84c06 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 100%,#7eb8d406 0%,transparent 50%);pointer-events:none;z-index:0}
+::selection{background:var(--gold-dim);color:var(--gold3)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:var(--radius)}
+input,button,select,textarea{font-family:inherit}
+.hero,.api-banner,.inst-banner,.app,.footer{animation:pageFade .5s cubic-bezier(0.4,0,0.2,1) both}
+.hero{animation-delay:.05s}
+.api-banner{animation-delay:.1s}
+.inst-banner{animation-delay:.15s}
+.app{animation-delay:.2s}
+.footer{animation-delay:.25s}
+.gem-item:active,.cat-btn:active,.all-card:active,.sim-card:active{transform:scale(.99)!important}
+.stat-num{transition:color var(--tr)}
+.stat:hover .stat-num{color:var(--gold2)}
+.hero-stats{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;width:fit-content;background:var(--bg2)}
+.instr-text .comment{color:var(--text3)}
