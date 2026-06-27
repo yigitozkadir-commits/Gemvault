@@ -1,0 +1,47 @@
+{
+  "packageId": "app.gemvault.pro",
+  "appVersionName": "6.0.0",
+  "appVersionCode": 600,
+  "hostUrl": "https://gemvault.pro",
+  "startUrl": "/?source=twa",
+  "name": "GemVault Pro",
+  "launcherName": "GemVault",
+  "themeColor": "#080808",
+  "navigationColor": "#080808",
+  "backgroundColor": "#080808",
+  "enableNotifications": false,
+  "shareTarget": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "shortcuts": [
+    {
+      "name": "Tüm Gemler",
+      "shortName": "Gemler",
+      "description": "Tüm gem listesi",
+      "url": "/?source=twa#/",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Gem Üretici",
+      "shortName": "Üretici",
+      "description": "Özel Gem üret",
+      "url": "/?source=twa#/generator",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "AI Radar",
+      "shortName": "Radar",
+      "description": "AI haberleri",
+      "url": "/?source=twa#/radar",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "generatedManifestVersion": "v1"
+}

@@ -1,0 +1,10 @@
+pre-commit:
+  commands:
+    lint:
+      glob: "*.{js,ts}"
+      run: pnpm lint --quiet
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit {1}
