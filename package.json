@@ -1,0 +1,22 @@
+{
+  "name": "gemvault-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "remotion studio src/index.ts",
+    "build:ad1": "remotion render src/index.ts GemVaultAd1 out/gemvault-ad1.mp4",
+    "build:ad2": "remotion render src/index.ts GemVaultAd2 out/gemvault-ad2.mp4",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.190",
+    "@remotion/cli": "^4.0.190"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0"
+  }
+}
