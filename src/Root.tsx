@@ -10,7 +10,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="GemVaultAd1"
         component={GemVaultAd1}
-        durationInFrames={9 * SCENE_DURATION_FRAMES} // 72sn
+        durationInFrames={9 * SCENE_DURATION_FRAMES} // 90sn
         fps={VIDEO_CONFIG.fps}
         width={VIDEO_CONFIG.width}
         height={VIDEO_CONFIG.height}
@@ -18,7 +18,7 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="GemVaultAd2"
         component={GemVaultAd2}
-        durationInFrames={7 * SCENE_DURATION_FRAMES} // 56sn
+        durationInFrames={7 * SCENE_DURATION_FRAMES} // 70sn
         fps={VIDEO_CONFIG.fps}
         width={VIDEO_CONFIG.width}
         height={VIDEO_CONFIG.height}

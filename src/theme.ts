@@ -25,5 +25,6 @@ export const VIDEO_CONFIG = {
   fps: 24,
 };
 
-// Her sahne 8 saniye = 192 frame (24fps'te)
-export const SCENE_DURATION_FRAMES = 8 * VIDEO_CONFIG.fps;
+// Her sahne 10 saniye = 240 frame (24fps'te) — Reklam 1 klipleri 240 frame
+// (tam 10.0sn) olarak geldi, bu yüzden 8sn varsayımından güncellendi.
+export const SCENE_DURATION_FRAMES = 10 * VIDEO_CONFIG.fps;
