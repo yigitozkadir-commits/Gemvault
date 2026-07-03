@@ -58,11 +58,29 @@ kayıyor, oranlar bozuluyor vb.), mevcut kod zaten iki ayrı klibi
 (06a solda Molo, 06b sağda Defne) otomatik yan yana kompoze ediyor —
 hiçbir değişiklik gerekmez, sadece iki dosyayı doğru isimle koy.
 
+## Voiceover (TR/EN)
+
+Reklam 1 iki dilli seslendirme destekliyor. Metinler
+`GEMVAULT_AD1_VOICEOVER_TR_EN.md` dosyasında hazır (9 sahnenin her biri
+için TR + EN kısa cümleler).
+
+1. Her satırı TTS ile seslendir.
+2. Dosyaları şu şekilde adlandırıp yerleştir:
+   ```
+   public/audio/tr/scene-01.mp3 ... scene-09.mp3
+   public/audio/en/scene-01.mp3 ... scene-09.mp3
+   ```
+3. `GemVaultAd1Voiced.tsx` bileşeni bu dosyaları otomatik sahne sahne
+   bindirir; orijinal klip sesi otomatik olarak kısılır (volume 0.25),
+   voiceover öne çıkar.
+
 ## Render Alma
 
 ```bash
-npm run build:ad1    # out/gemvault-ad1.mp4 üretir
-npm run build:ad2    # out/gemvault-ad2.mp4 üretir
+npm run build:ad1       # Sessiz/orijinal versiyon — out/gemvault-ad1.mp4
+npm run build:ad1-tr    # Türkçe seslendirmeli — out/gemvault-ad1-tr.mp4
+npm run build:ad1-en    # İngilizce seslendirmeli — out/gemvault-ad1-en.mp4
+npm run build:ad2       # Reklam 2 — out/gemvault-ad2.mp4
 ```
 
 ## Klip Süreleri Farklıysa
