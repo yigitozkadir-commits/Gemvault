@@ -3,6 +3,7 @@ import { Composition } from "remotion";
 import { GemVaultAd1 } from "./scenes/GemVaultAd1";
 import { GemVaultAd1Voiced } from "./scenes/GemVaultAd1Voiced";
 import { GemVaultAd2 } from "./scenes/GemVaultAd2";
+import { GemVaultAd2Voiced } from "./scenes/GemVaultAd2Voiced";
 import { VIDEO_CONFIG, SCENE_DURATION_FRAMES } from "./theme";
 
 export const RemotionRoot: React.FC = () => {
@@ -43,6 +44,16 @@ export const RemotionRoot: React.FC = () => {
       <Composition
         id="GemVaultAd2"
         component={GemVaultAd2}
+        durationInFrames={6 * SCENE_DURATION_FRAMES}
+        fps={VIDEO_CONFIG.fps}
+        width={VIDEO_CONFIG.width}
+        height={VIDEO_CONFIG.height}
+      />
+
+      {/* Türkçe seslendirmeli versiyon */}
+      <Composition
+        id="GemVaultAd2-TR"
+        component={GemVaultAd2Voiced}
         durationInFrames={6 * SCENE_DURATION_FRAMES}
         fps={VIDEO_CONFIG.fps}
         width={VIDEO_CONFIG.width}
