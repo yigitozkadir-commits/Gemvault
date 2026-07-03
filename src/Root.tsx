@@ -58,6 +58,18 @@ export const RemotionRoot: React.FC = () => {
         fps={VIDEO_CONFIG.fps}
         width={VIDEO_CONFIG.width}
         height={VIDEO_CONFIG.height}
+        defaultProps={{ lang: "tr" as const }}
+      />
+
+      {/* İngilizce seslendirmeli versiyon */}
+      <Composition
+        id="GemVaultAd2-EN"
+        component={GemVaultAd2Voiced}
+        durationInFrames={6 * SCENE_DURATION_FRAMES}
+        fps={VIDEO_CONFIG.fps}
+        width={VIDEO_CONFIG.width}
+        height={VIDEO_CONFIG.height}
+        defaultProps={{ lang: "en" as const }}
       />
     </>
   );
