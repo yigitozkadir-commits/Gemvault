@@ -15,7 +15,8 @@ import { SCENE_DURATION_FRAMES } from "../theme";
  *   public/audio/tr/ad2-scene-01.mp3 ... ad2-scene-04.mp3
  *   public/audio/tr/ad2-scene-05a.mp3, ad2-scene-05b.mp3  (split-screen —
  *     iki farklı ses karakteri art arda, kontrastı vurgulamak için)
- *   public/audio/tr/ad2-scene-06.mp3
+ *   public/audio/tr/ad2-scene-06a.mp3, ad2-scene-06b.mp3  (kapanış —
+ *     Molo repliği sonra Defne'nin CTA repliği)
  *
  * NOT — SERT KESİM: Sahne 2 → Sahne 3 arasında bilinçli olarak hiçbir
  * geçiş/crossfade YOK.
@@ -73,15 +74,21 @@ export const GemVaultAd2Voiced: React.FC = () => {
         </Sequence>
       </Sequence>
 
-      {/* BÖLÜM 3b — Sahne 6: Logo + esprili CTA (50-60sn) */}
+      {/* BÖLÜM 3b — Sahne 6: Logo + esprili CTA (50-60sn) — Molo'nun
+          teslimiyet repliği, ardından Defne'nin kapanış CTA repliği */}
       <Sequence
         from={5 * SCENE_DURATION_FRAMES}
         durationInFrames={SCENE_DURATION_FRAMES}
         name="Logo Kapanış"
       >
         <RawClip src="clips/ad2-scene-06.mp4" volume={0.25} />
-        <Audio src={staticFile("audio/tr/ad2-scene-06.mp3")} volume={1} />
-        <LogoWordmark fadeInStart={20} tagline="Molo gibi olma." />
+        <Sequence from={15} durationInFrames={65}>
+          <Audio src={staticFile("audio/tr/ad2-scene-06a.mp3")} volume={1} />
+        </Sequence>
+        <Sequence from={85} durationInFrames={115}>
+          <Audio src={staticFile("audio/tr/ad2-scene-06b.mp3")} volume={1} />
+        </Sequence>
+        <LogoWordmark fadeInStart={85} tagline="Molo gibi olma." />
       </Sequence>
     </AbsoluteFill>
   );
