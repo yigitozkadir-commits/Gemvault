@@ -28,3 +28,9 @@ export const VIDEO_CONFIG = {
 // Her sahne 10 saniye = 240 frame (24fps'te) — Reklam 1 klipleri 240 frame
 // (tam 10.0sn) olarak geldi, bu yüzden 8sn varsayımından güncellendi.
 export const SCENE_DURATION_FRAMES = 10 * VIDEO_CONFIG.fps;
+
+// Sahneler arası crossfade süresi (TransitionSeries.Transition)
+export const TRANSITION_DURATION_FRAMES = 15; // 0.625sn
+
+// Video klibi olmayan, sadece metin/grafik ara sahne kartlarının süresi
+export const INTERSTITIAL_DURATION_FRAMES = 36; // 1.5sn
