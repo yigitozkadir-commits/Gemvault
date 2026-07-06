@@ -8,12 +8,22 @@ export const RemotionRoot: React.FC = () => {
   return (
     <>
       <Composition
-        id="GemVaultAd1"
+        id="GemVaultAd1-TR"
         component={GemVaultAd1}
         durationInFrames={9 * SCENE_DURATION_FRAMES} // 90sn
         fps={VIDEO_CONFIG.fps}
         width={VIDEO_CONFIG.width}
         height={VIDEO_CONFIG.height}
+        defaultProps={{ lang: "tr" }}
+      />
+      <Composition
+        id="GemVaultAd1-EN"
+        component={GemVaultAd1}
+        durationInFrames={9 * SCENE_DURATION_FRAMES} // 90sn
+        fps={VIDEO_CONFIG.fps}
+        width={VIDEO_CONFIG.width}
+        height={VIDEO_CONFIG.height}
+        defaultProps={{ lang: "en" }}
       />
       <Composition
         id="GemVaultAd2"
