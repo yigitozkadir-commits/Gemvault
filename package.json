@@ -7,6 +7,10 @@
     "build:ad1:tr": "remotion render src/index.ts GemVaultAd1-TR out/gemvault-ad1-tr.mp4",
     "build:ad1:en": "remotion render src/index.ts GemVaultAd1-EN out/gemvault-ad1-en.mp4",
     "build:ad2": "remotion render src/index.ts GemVaultAd2 out/gemvault-ad2.mp4",
+    "build:ad3v-tr": "remotion render src/index.ts GemVaultAd3Viral-TR out/gemvault-ad3-viral-tr.mp4",
+    "build:ad3v-en": "remotion render src/index.ts GemVaultAd3Viral-EN out/gemvault-ad3-viral-en.mp4",
+    "build:ad3h-tr": "remotion render src/index.ts GemVaultAd3Hero-TR out/gemvault-ad3-hero-tr.mp4",
+    "build:ad3h-en": "remotion render src/index.ts GemVaultAd3Hero-EN out/gemvault-ad3-hero-en.mp4",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {
