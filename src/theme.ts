@@ -25,6 +25,21 @@ export const VIDEO_CONFIG = {
   fps: 24,
 };
 
+// Reklam 3 Viral kesim için DİKEY (9:16) format — Luma'dan bu oranda
+// üretildi. Ad1/Ad2/Ad3-Hero hep yatay (16:9) kalıyor, bu sadece Viral
+// kesime özel.
+export const VIDEO_CONFIG_VERTICAL = {
+  width: 720,
+  height: 1280,
+  fps: 24,
+};
+
 // Her sahne 10 saniye = 240 frame (24fps'te) — Reklam 1 klipleri 240 frame
 // (tam 10.0sn) olarak geldi, bu yüzden 8sn varsayımından güncellendi.
 export const SCENE_DURATION_FRAMES = 10 * VIDEO_CONFIG.fps;
+
+// Saniyeyi frame'e çevirir (24fps sabit). Ad3'te sahne süreleri sabit
+// değil (Luma 5sn/10sn, Flow 8sn, reuse edilenler 8sn) — bu yüzden Ad3
+// kompozisyonlarında SCENE_DURATION_FRAMES yerine bu fonksiyonla
+// sahne-bazlı süre giriliyor.
+export const sec = (seconds: number) => Math.round(seconds * VIDEO_CONFIG.fps);
