@@ -6,7 +6,7 @@ import { LogoWordmark } from "../components/Overlays";
 import { sec } from "../theme";
 
 /**
- * GemVault Reklam 4 — "Herkes İçin Bir Gem Var" (~51sn, yatay 16:9)
+ * GemVault Reklam 4 — "Herkes İçin Bir Gem Var" (~45sn, yatay 16:9)
  *
  * public/clips/: ad4-scene-01.mp4 ... ad4-scene-07.mp4 (Luma, 5sn),
  *                 ad1-scene-09.mp4 (reuse, kapanış)
@@ -20,13 +20,13 @@ import { sec } from "../theme";
  */
 
 const montageScenes = [
-  { file: "ad4-scene-01.mp4", audioIndex: "01", duration: 5 }, // Geliştirici
-  { file: "ad4-scene-02.mp4", audioIndex: "02", duration: 5 }, // Sağlık Koçu
-  { file: "ad4-scene-03.mp4", audioIndex: "03", duration: 5 }, // İçerik Üreticisi
-  { file: "ad4-scene-04.mp4", audioIndex: "04", duration: 5 }, // Molo
-  { file: "ad4-scene-05.mp4", audioIndex: "05", duration: 5 }, // Strateji
-  { file: "ad4-scene-06.mp4", audioIndex: "06", duration: 5 }, // Hukuk/İş
-  { file: "ad4-scene-07.mp4", audioIndex: "07", duration: 5 }, // Eğitimci
+  { file: "ad4-scene-01.mp4", audioIndex: "01", duration: 4.5 }, // Geliştirici
+  { file: "ad4-scene-02.mp4", audioIndex: "02", duration: 4.5 }, // Sağlık Koçu
+  { file: "ad4-scene-03.mp4", audioIndex: "03", duration: 4.5 }, // İçerik Üreticisi
+  { file: "ad4-scene-04.mp4", audioIndex: "04", duration: 4.5 }, // Molo
+  { file: "ad4-scene-05.mp4", audioIndex: "05", duration: 4.5 }, // Strateji
+  { file: "ad4-scene-06.mp4", audioIndex: "06", duration: 4.5 }, // Hukuk/İş
+  { file: "ad4-scene-07.mp4", audioIndex: "07", duration: 4.5 }, // Eğitimci
 ];
 
 const GRID_CLIPS = [
@@ -38,8 +38,8 @@ const GRID_CLIPS = [
   "clips/ad4-scene-07.mp4",
 ];
 
-const GRID_DURATION = 8;
-const CLOSE_DURATION = 8;
+const GRID_DURATION = 7;
+const CLOSE_DURATION = 6.5;
 
 const MONTAGE_TOTAL = montageScenes.reduce((sum, s) => sum + s.duration, 0);
 const GRID_FROM = sec(MONTAGE_TOTAL);

@@ -17,8 +17,8 @@ import {
 const AD3_VIRAL_DURATION = sec(5 * 3);
 // Ad3 Hero: 10+10+10+8+8+8+8+8 = 70sn
 const AD3_HERO_DURATION = sec(10 + 10 + 10 + 8 + 8 + 8 + 8 + 8);
-// Ad4: montaj (7x5sn=35sn) + grid (8sn) + kapanış (8sn) = 51sn
-const AD4_DURATION = sec(35 + 8 + 8);
+// Ad4: montaj (7x4.5sn=31.5sn) + grid (7sn) + kapanış (6.5sn) = 45sn
+const AD4_DURATION = sec(31.5 + 7 + 6.5);
 
 export const RemotionRoot: React.FC = () => {
   return (
