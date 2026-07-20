@@ -12,6 +12,8 @@
     "build:ad3v-en": "remotion render src/index.ts GemVaultAd3Viral-EN out/gemvault-ad3-viral-en.mp4",
     "build:ad3h-tr": "remotion render src/index.ts GemVaultAd3Hero-TR out/gemvault-ad3-hero-tr.mp4",
     "build:ad3h-en": "remotion render src/index.ts GemVaultAd3Hero-EN out/gemvault-ad3-hero-en.mp4",
+    "build:ad4-tr": "remotion render src/index.ts GemVaultAd4-TR out/gemvault-ad4-tr.mp4",
+    "build:ad4-en": "remotion render src/index.ts GemVaultAd4-EN out/gemvault-ad4-en.mp4",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {

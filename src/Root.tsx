@@ -5,6 +5,7 @@ import { GemVaultAd1Voiced } from "./scenes/GemVaultAd1Voiced";
 import { GemVaultAd2 } from "./scenes/GemVaultAd2";
 import { GemVaultAd3Viral } from "./scenes/GemVaultAd3Viral";
 import { GemVaultAd3Hero } from "./scenes/GemVaultAd3Hero";
+import { GemVaultAd4 } from "./scenes/GemVaultAd4";
 import {
   VIDEO_CONFIG,
   VIDEO_CONFIG_VERTICAL,
@@ -16,6 +17,8 @@ import {
 const AD3_VIRAL_DURATION = sec(5 * 3);
 // Ad3 Hero: 10+10+10+8+8+8+8+8 = 70sn
 const AD3_HERO_DURATION = sec(10 + 10 + 10 + 8 + 8 + 8 + 8 + 8);
+// Ad4: montaj (7x5sn=35sn) + grid (8sn) + kapanış (8sn) = 51sn
+const AD4_DURATION = sec(35 + 8 + 8);
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -95,6 +98,26 @@ export const RemotionRoot: React.FC = () => {
         id="GemVaultAd3Hero-EN"
         component={GemVaultAd3Hero}
         durationInFrames={AD3_HERO_DURATION}
+        fps={VIDEO_CONFIG.fps}
+        width={VIDEO_CONFIG.width}
+        height={VIDEO_CONFIG.height}
+        defaultProps={{ lang: "en" as const }}
+      />
+
+      {/* Reklam 4 — Sosyal Kanıt montajı (yatay 16:9, ~51sn) */}
+      <Composition
+        id="GemVaultAd4-TR"
+        component={GemVaultAd4}
+        durationInFrames={AD4_DURATION}
+        fps={VIDEO_CONFIG.fps}
+        width={VIDEO_CONFIG.width}
+        height={VIDEO_CONFIG.height}
+        defaultProps={{ lang: "tr" as const }}
+      />
+      <Composition
+        id="GemVaultAd4-EN"
+        component={GemVaultAd4}
+        durationInFrames={AD4_DURATION}
         fps={VIDEO_CONFIG.fps}
         width={VIDEO_CONFIG.width}
         height={VIDEO_CONFIG.height}
