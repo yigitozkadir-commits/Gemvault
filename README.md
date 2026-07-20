@@ -58,11 +58,24 @@ kayıyor, oranlar bozuluyor vb.), mevcut kod zaten iki ayrı klibi
 (06a solda Molo, 06b sağda Defne) otomatik yan yana kompoze ediyor —
 hiçbir değişiklik gerekmez, sadece iki dosyayı doğru isimle koy.
 
+### Reklam 3 (bkz. AD3_KURULUM_REHBERI.md)
+
+Reklam 3'ün Viral (dikey 9:16) ve Hero (yatay 16:9) kesimleri var, her
+sahnede TR/EN seslendirme var. Klip ve ses dosyası yerleşimi, süre
+kontrolü ve reuse edilen sahneler için `AD3_KURULUM_REHBERI.md` dosyasına
+bak.
+
 ## Render Alma
 
 ```bash
-npm run build:ad1    # out/gemvault-ad1.mp4 üretir
-npm run build:ad2    # out/gemvault-ad2.mp4 üretir
+npm run build:ad1       # out/gemvault-ad1.mp4 üretir (sessiz versiyon)
+npm run build:ad1-tr    # out/gemvault-ad1-tr.mp4 üretir (TR seslendirme)
+npm run build:ad1-en    # out/gemvault-ad1-en.mp4 üretir (EN seslendirme)
+npm run build:ad2       # out/gemvault-ad2.mp4 üretir
+npm run build:ad3v-tr   # out/gemvault-ad3-viral-tr.mp4 üretir
+npm run build:ad3v-en   # out/gemvault-ad3-viral-en.mp4 üretir
+npm run build:ad3h-tr   # out/gemvault-ad3-hero-tr.mp4 üretir
+npm run build:ad3h-en   # out/gemvault-ad3-hero-en.mp4 üretir
 ```
 
 ## Klip Süreleri Farklıysa
@@ -79,21 +92,25 @@ değiştirmen yeterli.
 ```
 src/
   index.ts              Remotion giriş noktası
-  Root.tsx              İki kompozisyonu (Ad1, Ad2) kaydeder
+  Root.tsx              Tüm kompozisyonları (Ad1, Ad1 TR/EN, Ad2, Ad3 Viral/Hero TR/EN) kaydeder
   theme.ts               Marka renkleri, fontlar, video ayarları
   components/
-    RawClip.tsx           Flow klibini oynatan temel bileşen
+    RawClip.tsx           Flow/Luma klibini oynatan temel bileşen
     Overlays.tsx           Logo wordmark + alt yazı bileşenleri
     SplitScreenCompare.tsx Sahne 6 için split-screen kompozisyonu
   scenes/
-    GemVaultAd1.tsx        Reklam 1 — 9 sahne, tam kompozisyon
+    GemVaultAd1.tsx        Reklam 1 — 9 sahne, sessiz kompozisyon
+    GemVaultAd1Voiced.tsx  Reklam 1 — TR/EN seslendirmeli kompozisyon
     GemVaultAd2.tsx         Reklam 2 — 7 sahne, tam kompozisyon
+    GemVaultAd3Viral.tsx   Reklam 3 — Viral kesim (dikey, 3 sahne)
+    GemVaultAd3Hero.tsx    Reklam 3 — Hero kesim (yatay, 8 sahne)
 public/
-  clips/                  Flow'dan indirilen ham MP4'lerin konulacağı yer
+  clips/                  Ham MP4'lerin konulacağı yer
+  audio/tr/, audio/en/    Seslendirme mp3'lerinin konulacağı yer
 ```
 
 ## Sonraki Adımlar
-1. Flow'da tüm klipleri üret, `public/clips/` içine doğru isimlerle koy.
+1. Flow/Luma'da tüm klipleri üret, `public/clips/` içine doğru isimlerle koy.
 2. `npm install && npm start` ile Remotion Studio'da önizle.
 3. Gerekirse `Overlays.tsx` içindeki metinleri (slogan, tagline) düzenle.
-4. `npm run build:ad1` ve `npm run build:ad2` ile final MP4'leri al.
+4. `npm run build:*` komutlarıyla final MP4'leri al.
