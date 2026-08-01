@@ -14,6 +14,7 @@
     "build:terken": "remotion render src/index.ts TerkenHatun out/terken-hatun.mp4",
     "build:suyumbike": "remotion render src/index.ts SuyumbikeHatun out/suyumbike-hatun.mp4",
     "build:subeshi": "remotion render src/index.ts SubeshiCadilari out/subeshi-cadilari.mp4",
+    "build:orumcekadam": "remotion render src/index.ts OrumcekAdam out/orumcek-adam.mp4",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {

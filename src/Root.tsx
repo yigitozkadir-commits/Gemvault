@@ -12,6 +12,7 @@ import { TaidulaFilm } from "./scenes/Taidula";
 import { TerkenHatunFilm } from "./scenes/TerkenHatun";
 import { SuyumbikeHatunFilm } from "./scenes/SuyumbikeHatun";
 import { SubeshiCadilariFilm } from "./scenes/SubeshiCadilari";
+import { OrumcekAdamFilm } from "./scenes/OrumcekAdam";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -28,6 +29,8 @@ import {
   SUYUMBIKE_HATUN_DURATION_FRAMES,
   SUBESHI_CADILARI_VIDEO_CONFIG,
   SUBESHI_CADILARI_DURATION_FRAMES,
+  ORUMCEK_ADAM_VIDEO_CONFIG,
+  ORUMCEK_ADAM_DURATION_FRAMES,
 } from "./theme";
 
 // Her seri filminin sonuna GÖKUMAY kapanış imzası eklenir.
@@ -138,6 +141,16 @@ export const RemotionRoot: React.FC = () => {
         fps={SUBESHI_CADILARI_VIDEO_CONFIG.fps}
         width={SUBESHI_CADILARI_VIDEO_CONFIG.width}
         height={SUBESHI_CADILARI_VIDEO_CONFIG.height}
+      />
+
+      {/* Bozkır Hatunları serisinden bağımsız hobi projesi — kapanış imzası yok. */}
+      <Composition
+        id="OrumcekAdam"
+        component={OrumcekAdamFilm}
+        durationInFrames={ORUMCEK_ADAM_DURATION_FRAMES}
+        fps={ORUMCEK_ADAM_VIDEO_CONFIG.fps}
+        width={ORUMCEK_ADAM_VIDEO_CONFIG.width}
+        height={ORUMCEK_ADAM_VIDEO_CONFIG.height}
       />
     </>
   );

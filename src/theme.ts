@@ -89,3 +89,15 @@ export const SUBESHI_CADILARI_VIDEO_CONFIG = {
 };
 
 export const SUBESHI_CADILARI_DURATION_FRAMES = 1080; // 36sn @ 30fps
+
+// ============================================================
+// "Örümcek Adam" — Bozkır Hatunları serisinden tamamen ayrı, bağımsız
+// bir hobi projesi. Kendi ses/renk mantığı var; seri kapanışı yok.
+// ============================================================
+export const ORUMCEK_ADAM_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const ORUMCEK_ADAM_DURATION_FRAMES = 900; // 30sn @ 30fps
