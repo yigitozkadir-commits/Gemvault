@@ -11,6 +11,7 @@ import {
 import { TaidulaFilm } from "./scenes/Taidula";
 import { TerkenHatunFilm } from "./scenes/TerkenHatun";
 import { SuyumbikeHatunFilm } from "./scenes/SuyumbikeHatun";
+import { SubeshiCadilariFilm } from "./scenes/SubeshiCadilari";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -25,6 +26,8 @@ import {
   TERKEN_HATUN_DURATION_FRAMES,
   SUYUMBIKE_HATUN_VIDEO_CONFIG,
   SUYUMBIKE_HATUN_DURATION_FRAMES,
+  SUBESHI_CADILARI_VIDEO_CONFIG,
+  SUBESHI_CADILARI_DURATION_FRAMES,
 } from "./theme";
 
 // Her seri filminin sonuna GÖKUMAY kapanış imzası eklenir.
@@ -48,6 +51,9 @@ const TerkenHatunWithOutro: React.FC = () => (
 );
 const SuyumbikeHatunWithOutro: React.FC = () => (
   <FilmWithOutro film={<SuyumbikeHatunFilm />} filmFrames={SUYUMBIKE_HATUN_DURATION_FRAMES} />
+);
+const SubeshiCadilariWithOutro: React.FC = () => (
+  <FilmWithOutro film={<SubeshiCadilariFilm />} filmFrames={SUBESHI_CADILARI_DURATION_FRAMES} />
 );
 
 export const RemotionRoot: React.FC = () => {
@@ -124,6 +130,14 @@ export const RemotionRoot: React.FC = () => {
         fps={SUYUMBIKE_HATUN_VIDEO_CONFIG.fps}
         width={SUYUMBIKE_HATUN_VIDEO_CONFIG.width}
         height={SUYUMBIKE_HATUN_VIDEO_CONFIG.height}
+      />
+      <Composition
+        id="SubeshiCadilari"
+        component={SubeshiCadilariWithOutro}
+        durationInFrames={SUBESHI_CADILARI_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
+        fps={SUBESHI_CADILARI_VIDEO_CONFIG.fps}
+        width={SUBESHI_CADILARI_VIDEO_CONFIG.width}
+        height={SUBESHI_CADILARI_VIDEO_CONFIG.height}
       />
     </>
   );

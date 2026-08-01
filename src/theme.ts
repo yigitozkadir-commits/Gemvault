@@ -77,3 +77,15 @@ export const SUYUMBIKE_HATUN_VIDEO_CONFIG = {
 };
 
 export const SUYUMBIKE_HATUN_DURATION_FRAMES = 1018; // ~33.9sn @ 30fps
+
+// "Bozkır Hatunları" serisi — Subeşi Cadıları (Tarım Havzası mumyaları).
+// Diğer dörtten farklı: hükümdar/güç anlatısı değil, kimliksiz bir gizem —
+// ses daha yavaş/alçak, ambiyans sonda tam sessizliğe değil çok düşük bir
+// seviyeye iniyor. Kaynak video 30sn/900 frame, anlatım ~35sn.
+export const SUBESHI_CADILARI_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const SUBESHI_CADILARI_DURATION_FRAMES = 1080; // 36sn @ 30fps
