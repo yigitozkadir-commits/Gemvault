@@ -55,3 +55,14 @@ export const TAIDULA_VIDEO_CONFIG = {
 };
 
 export const TAIDULA_DURATION_FRAMES = 1110; // ~37sn @ 30fps
+
+// "Bozkır Hatunları" serisi — Terken Hatun (Harezmşahlar). Kaynak video
+// 30sn/900 frame, genişletilmiş anlatım (~34.6sn) videodan uzun olduğu için
+// kapanışta freeze ile video, sesle aynı anda biter.
+export const TERKEN_HATUN_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const TERKEN_HATUN_DURATION_FRAMES = 1068; // ~35.6sn @ 30fps

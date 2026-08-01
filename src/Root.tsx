@@ -9,6 +9,7 @@ import {
   ChingHatunFilmV2Vertical,
 } from "./scenes/ChingHatun";
 import { TaidulaFilm } from "./scenes/Taidula";
+import { TerkenHatunFilm } from "./scenes/TerkenHatun";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -19,6 +20,8 @@ import {
   CING_HATUN_VERTICAL_VIDEO_CONFIG,
   TAIDULA_VIDEO_CONFIG,
   TAIDULA_DURATION_FRAMES,
+  TERKEN_HATUN_VIDEO_CONFIG,
+  TERKEN_HATUN_DURATION_FRAMES,
 } from "./theme";
 
 // Her seri filminin sonuna GÖKUMAY kapanış imzası eklenir.
@@ -36,6 +39,9 @@ const ChingHatunV2VerticalWithOutro: React.FC = () => (
 );
 const TaidulaWithOutro: React.FC = () => (
   <FilmWithOutro film={<TaidulaFilm />} filmFrames={TAIDULA_DURATION_FRAMES} />
+);
+const TerkenHatunWithOutro: React.FC = () => (
+  <FilmWithOutro film={<TerkenHatunFilm />} filmFrames={TERKEN_HATUN_DURATION_FRAMES} />
 );
 
 export const RemotionRoot: React.FC = () => {
@@ -96,6 +102,14 @@ export const RemotionRoot: React.FC = () => {
         fps={TAIDULA_VIDEO_CONFIG.fps}
         width={TAIDULA_VIDEO_CONFIG.width}
         height={TAIDULA_VIDEO_CONFIG.height}
+      />
+      <Composition
+        id="TerkenHatun"
+        component={TerkenHatunWithOutro}
+        durationInFrames={TERKEN_HATUN_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
+        fps={TERKEN_HATUN_VIDEO_CONFIG.fps}
+        width={TERKEN_HATUN_VIDEO_CONFIG.width}
+        height={TERKEN_HATUN_VIDEO_CONFIG.height}
       />
     </>
   );

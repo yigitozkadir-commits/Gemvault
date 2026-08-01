@@ -11,6 +11,7 @@
     "build:cinghatun-v2": "remotion render src/index.ts ChingHatunV2 out/cinghatun-v2.mp4",
     "build:cinghatun-v2-vertical": "remotion render src/index.ts ChingHatunV2Vertical out/cinghatun-v2-vertical.mp4",
     "build:taidula": "remotion render src/index.ts Taidula out/taidula.mp4",
+    "build:terken": "remotion render src/index.ts TerkenHatun out/terken-hatun.mp4",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {
