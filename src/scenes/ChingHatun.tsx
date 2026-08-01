@@ -29,6 +29,8 @@ const VIDEO_STYLE: React.CSSProperties = {
   objectFit: "cover",
 };
 
+const DEFAULT_VIDEO_SRC = "videos/cinghatun-ilk-sahne.mp4";
+
 /**
  * "Çing Hatun" — 30sn belgesel klibi. Tek parça Flow görüntüsü
  * (İlk Sahne) üstüne ElevenLabs anlatımı, ambiyans, ortak renk grade'i
@@ -36,10 +38,13 @@ const VIDEO_STYLE: React.CSSProperties = {
  *
  * `orientation` sadece kadraj/altyazı boyutunu etkiler — görüntü her iki
  * formatta da object-fit:cover ile kadrajı dolduracak şekilde ortadan kırpılır.
+ * `videoSrc` public/ klasörüne göre relatif yol — Flow'un farklı üretimlerini
+ * (v1, v2, ...) aynı anlatım/ambiyans/altyazı/renk grade üstünde denemek içindir.
  */
 export const ChingHatunFilm: React.FC<{
   orientation?: "horizontal" | "vertical";
-}> = ({ orientation = "horizontal" }) => {
+  videoSrc?: string;
+}> = ({ orientation = "horizontal", videoSrc = DEFAULT_VIDEO_SRC }) => {
   const frame = useCurrentFrame();
 
   const introFade = interpolate(frame, [0, INTRO_FADE_FRAMES], [0, 1], {
@@ -72,14 +77,14 @@ export const ChingHatunFilm: React.FC<{
         <AbsoluteFill style={{ transform: `scale(${zoom})` }}>
           {frame <= FREEZE_AT ? (
             <OffthreadVideo
-              src={staticFile("videos/cinghatun-ilk-sahne.mp4")}
+              src={staticFile(videoSrc)}
               volume={0}
               style={VIDEO_STYLE}
             />
           ) : (
             <Freeze frame={FREEZE_AT}>
               <OffthreadVideo
-                src={staticFile("videos/cinghatun-ilk-sahne.mp4")}
+                src={staticFile(videoSrc)}
                 volume={0}
                 style={VIDEO_STYLE}
               />
@@ -112,4 +117,16 @@ export const ChingHatunFilm: React.FC<{
 
 export const ChingHatunFilmVertical: React.FC = () => (
   <ChingHatunFilm orientation="vertical" />
+);
+
+// Flow'un ikinci üretimi ("İlk Sahne" v2) — farklı görsel versiyon,
+// aynı anlatım/ambiyans/altyazı/renk grade üstünde.
+const V2_VIDEO_SRC = "videos/cinghatun-ilk-sahne-v2.mp4";
+
+export const ChingHatunFilmV2: React.FC = () => (
+  <ChingHatunFilm videoSrc={V2_VIDEO_SRC} />
+);
+
+export const ChingHatunFilmV2Vertical: React.FC = () => (
+  <ChingHatunFilm orientation="vertical" videoSrc={V2_VIDEO_SRC} />
 );
