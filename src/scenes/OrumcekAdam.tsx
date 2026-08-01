@@ -38,20 +38,8 @@ const FREEZE_FRAMES = TOTAL_FRAMES - FREEZE_START; // 92 (~3sn) — zafer duruş
 const FADE_IN_FRAMES = 15; // 0.5sn
 const FADE_OUT_FRAMES = 30; // 1sn
 
-// Narration Sequence'leri, sıkıştırılmış perde sınırlarına göre yeniden konumlandı.
-const NARRATION1_START = 0;
-const NARRATION2_START = ACT2_START;
-const NARRATION3_START = ACT3_START;
-
-// Müzik ducking pencereleri: [başlangıç, bitiş] frame — narration'lar sırasında kısılır.
-const DUCK_WINDOWS: Array<[number, number]> = [
-  [0, 134], // narration1 (~4.48sn)
-  [ACT2_START, ACT2_START + 82], // narration2 (~2.73sn)
-  [ACT3_START, ACT3_START + 91], // narration3 (~3.04sn)
-];
-const DUCK_RAMP = 8;
-const DUCK_RATIO = 0.1 / 0.22; // ~%10 -> ~%22 taban seviyesine oranla
-const MUSIC_BASE_VOLUME = 0.22;
+// ElevenLabs anlatımı bu videoda devre dışı — sadece enstrümantal müzik çalıyor.
+const MUSIC_BASE_VOLUME = 0.55;
 
 const VIDEO_STYLE: React.CSSProperties = {
   width: "100%",
@@ -59,30 +47,14 @@ const VIDEO_STYLE: React.CSSProperties = {
   objectFit: "cover",
 };
 
-const duckLevel = (frame: number): number => {
-  let level = 1;
-  for (const [start, end] of DUCK_WINDOWS) {
-    const into = interpolate(frame, [start - DUCK_RAMP, start], [1, DUCK_RATIO], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    });
-    const out = interpolate(frame, [end, end + DUCK_RAMP], [DUCK_RATIO, 1], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    });
-    const windowLevel = frame < start ? into : frame > end ? out : DUCK_RATIO;
-    level = Math.min(level, windowLevel);
-  }
-  return level;
-};
-
 /**
  * "Örümcek Adam" — Bozkır Hatunları serisinden bağımsız, ayrı bir hobi
- * projesi. Metin overlay yok, seri kapanış imzası yok. Kaynak Flow klibi
- * zaten sinematik renklendirilmiş geldiği için ek bir ColorGrade katmanı
- * uygulanmıyor. Arka plan müziği, yüklenen "Spider-Man Movie Theme"
- * dosyasından vokal/merkez kanal iptaliyle (phase-cancellation) enstrümantal
- * hale getirildi ve şarkının en güçlü/ritmik bölümünden (47-76.3sn) 29.3sn'lik
+ * projesi. Metin overlay yok, seri kapanış imzası yok, ElevenLabs anlatımı
+ * devre dışı — tek ses katmanı enstrümantal müzik. Kaynak Flow klibi zaten
+ * sinematik renklendirilmiş geldiği için ek bir ColorGrade katmanı
+ * uygulanmıyor. Müzik, yüklenen "Spider-Man Movie Theme" dosyasından
+ * vokal/merkez kanal iptaliyle (phase-cancellation) enstrümantal hale
+ * getirildi ve şarkının en güçlü/ritmik bölümünden (47-76.3sn) 29.3sn'lik
  * bir dilim seçildi. Videonun "sakin" açılış perdesi (Uyanış) 1.6x
  * hızlandırılarak atlanıp aksiyon perdelerine daha hızlı geçiliyor; kapanışta
  * kahraman duruşu son karede donarak müziğin doruğuyla birlikte asılı kalıyor.
@@ -102,7 +74,7 @@ export const OrumcekAdamFilm: React.FC = () => {
   );
   const opacity = Math.min(fadeIn, fadeOut);
 
-  const musicVolume = MUSIC_BASE_VOLUME * duckLevel(frame) * opacity;
+  const musicVolume = MUSIC_BASE_VOLUME * opacity;
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#000", opacity }}>
@@ -147,18 +119,7 @@ export const OrumcekAdamFilm: React.FC = () => {
         </Freeze>
       )}
 
-      {/* Anlatım — her perdenin başında */}
-      <Sequence from={NARRATION1_START}>
-        <Audio src={staticFile("audio/narration1.mp3")} volume={1} />
-      </Sequence>
-      <Sequence from={NARRATION2_START}>
-        <Audio src={staticFile("audio/narration2.mp3")} volume={1} />
-      </Sequence>
-      <Sequence from={NARRATION3_START}>
-        <Audio src={staticFile("audio/narration3.mp3")} volume={1} />
-      </Sequence>
-
-      {/* Arka plan müziği — enstrümantal, narration'lar sırasında ducking, baştan/sondan fade */}
+      {/* ElevenLabs anlatımı devre dışı — sadece müzik çalıyor */}
       <Audio src={staticFile(MUSIC_SRC)} volume={musicVolume} />
     </AbsoluteFill>
   );
