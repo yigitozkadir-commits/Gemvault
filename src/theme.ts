@@ -37,3 +37,10 @@ export const CING_HATUN_VIDEO_CONFIG = {
 };
 
 export const CING_HATUN_DURATION_FRAMES = 900; // 30sn @ 30fps
+
+// Dikey (Reels/Shorts/TikTok) versiyon — aynı süre, 9:16 kadraj.
+export const CING_HATUN_VERTICAL_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};

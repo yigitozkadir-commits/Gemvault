@@ -23,12 +23,23 @@ const AMBIENT_VOLUME = 0.06;
 const AMBIENT_FADE_START = OUTRO_START - 30; // 840 -> 870 arası 0'a iner
 const INTRO_FADE_FRAMES = 15;
 
+const VIDEO_STYLE: React.CSSProperties = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+};
+
 /**
  * "Çing Hatun" — 30sn belgesel klibi. Tek parça Flow görüntüsü
  * (İlk Sahne) üstüne ElevenLabs anlatımı, ambiyans, ortak renk grade'i
  * ve zaman-kodlu alt yazılar bindirilir.
+ *
+ * `orientation` sadece kadraj/altyazı boyutunu etkiler — görüntü her iki
+ * formatta da object-fit:cover ile kadrajı dolduracak şekilde ortadan kırpılır.
  */
-export const ChingHatunFilm: React.FC = () => {
+export const ChingHatunFilm: React.FC<{
+  orientation?: "horizontal" | "vertical";
+}> = ({ orientation = "horizontal" }) => {
   const frame = useCurrentFrame();
 
   const introFade = interpolate(frame, [0, INTRO_FADE_FRAMES], [0, 1], {
@@ -63,19 +74,25 @@ export const ChingHatunFilm: React.FC = () => {
             <OffthreadVideo
               src={staticFile("videos/cinghatun-ilk-sahne.mp4")}
               volume={0}
+              style={VIDEO_STYLE}
             />
           ) : (
             <Freeze frame={FREEZE_AT}>
               <OffthreadVideo
                 src={staticFile("videos/cinghatun-ilk-sahne.mp4")}
                 volume={0}
+                style={VIDEO_STYLE}
               />
             </Freeze>
           )}
         </AbsoluteFill>
       </ColorGrade>
 
-      <CaptionTrack cues={CING_HATUN_CAPTIONS} />
+      <CaptionTrack
+        cues={CING_HATUN_CAPTIONS}
+        fontSize={orientation === "vertical" ? 44 : 38}
+        maxWidthPercent={orientation === "vertical" ? 88 : 76}
+      />
 
       {/* Anlatım — tek parça, kesintisiz (frame 0'dan başlar) */}
       <Audio src={staticFile("audio/narration.mp3")} volume={1} />
@@ -92,3 +109,7 @@ export const ChingHatunFilm: React.FC = () => {
     </AbsoluteFill>
   );
 };
+
+export const ChingHatunFilmVertical: React.FC = () => (
+  <ChingHatunFilm orientation="vertical" />
+);

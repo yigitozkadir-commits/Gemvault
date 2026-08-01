@@ -9,7 +9,11 @@ const FADE_FRAMES = 6;
  * ElevenLabs word-level alignment'ından türetilen frame aralıklarına göre
  * ekranın alt üçte birinde alt yazı gösterir (6 frame fade-in/out).
  */
-export const CaptionTrack: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => {
+export const CaptionTrack: React.FC<{
+  cues: CaptionCue[];
+  fontSize?: number;
+  maxWidthPercent?: number;
+}> = ({ cues, fontSize = 38, maxWidthPercent = 76 }) => {
   const frame = useCurrentFrame();
   const active = cues.find(
     (c) => frame >= c.startFrame && frame <= c.endFrame + FADE_FRAMES
@@ -39,11 +43,11 @@ export const CaptionTrack: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => {
       <div
         style={{
           opacity,
-          maxWidth: "76%",
+          maxWidth: `${maxWidthPercent}%`,
           textAlign: "center",
           fontFamily: FONTS.serif,
           fontWeight: 500,
-          fontSize: 38,
+          fontSize,
           lineHeight: 1.35,
           color: "#f5f2ea",
           textShadow:
