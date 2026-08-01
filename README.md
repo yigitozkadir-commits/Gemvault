@@ -97,3 +97,30 @@ public/
 2. `npm install && npm start` ile Remotion Studio'da önizle.
 3. Gerekirse `Overlays.tsx` içindeki metinleri (slogan, tagline) düzenle.
 4. `npm run build:ad1` ve `npm run build:ad2` ile final MP4'leri al.
+
+## Çing Hatun — Belgesel Klibi (`ChingHatun` kompozisyonu)
+
+30 saniyelik, 1920x1080/30fps belgesel klip. `Cing_Hatun_Remotion_Yapim_Talimati.txt`
+talimatındaki tek parça anlatım/ambiyans/alt yazı mantığı burada uygulandı:
+
+```
+public/
+  videos/cinghatun-ilk-sahne.mp4   Flow'dan gelen ham görüntü (ses mute edildi)
+  audio/narration.mp3               ElevenLabs "Deniz - Calm Narrator" ile üretildi
+  audio/ambient_wind_fire.mp3       ElevenLabs Sound Effects — bozkır/ateş/rüzgar loop (~22sn)
+src/
+  data/chingHatunCaptions.ts        ElevenLabs word-level alignment'ından türetilen alt yazı zamanlamaları
+  components/ColorGrade.tsx         Ortak sıcak ton + vinyet + film grain wrapper'ı
+  components/Captions.tsx           Zaman kodlu alt yazı katmanı (6 frame fade)
+  scenes/ChingHatun.tsx             Ana kompozisyon: video mute + narration + ambiyans + son 30 frame freeze/fade-out
+```
+
+Render:
+```bash
+npm run build:cinghatun   # out/cinghatun.mp4 üretir
+```
+
+**Not:** Talimat dosyasında 3 ayrı sahne (scene1/2/3) + iki crossfade geçişi tarif
+ediliyor; şu an sadece "İlk Sahne" klibi mevcut ve tam 30sn olduğu için tek parça
+görüntü olarak kullanıldı. scene2/scene3 klipleri gelince `ChingHatun.tsx` içindeki
+video katmanı 3 ayrı `<OffthreadVideo>` + 12 frame crossfade yapısına bölünebilir.

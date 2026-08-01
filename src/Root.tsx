@@ -2,7 +2,13 @@ import React from "react";
 import { Composition } from "remotion";
 import { GemVaultAd1 } from "./scenes/GemVaultAd1";
 import { GemVaultAd2 } from "./scenes/GemVaultAd2";
-import { VIDEO_CONFIG, SCENE_DURATION_FRAMES } from "./theme";
+import { ChingHatunFilm } from "./scenes/ChingHatun";
+import {
+  VIDEO_CONFIG,
+  SCENE_DURATION_FRAMES,
+  CING_HATUN_VIDEO_CONFIG,
+  CING_HATUN_DURATION_FRAMES,
+} from "./theme";
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -22,6 +28,14 @@ export const RemotionRoot: React.FC = () => {
         fps={VIDEO_CONFIG.fps}
         width={VIDEO_CONFIG.width}
         height={VIDEO_CONFIG.height}
+      />
+      <Composition
+        id="ChingHatun"
+        component={ChingHatunFilm}
+        durationInFrames={CING_HATUN_DURATION_FRAMES}
+        fps={CING_HATUN_VIDEO_CONFIG.fps}
+        width={CING_HATUN_VIDEO_CONFIG.width}
+        height={CING_HATUN_VIDEO_CONFIG.height}
       />
     </>
   );

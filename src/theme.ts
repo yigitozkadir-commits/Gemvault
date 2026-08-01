@@ -28,3 +28,12 @@ export const VIDEO_CONFIG = {
 // Her sahne 10 saniye = 240 frame (24fps'te) — Reklam 1 klipleri 240 frame
 // (tam 10.0sn) olarak geldi, bu yüzden 8sn varsayımından güncellendi.
 export const SCENE_DURATION_FRAMES = 10 * VIDEO_CONFIG.fps;
+
+// Çing Hatun belgesel klibi — ayrı format (1920x1080, 30fps, 30sn).
+export const CING_HATUN_VIDEO_CONFIG = {
+  width: 1920,
+  height: 1080,
+  fps: 30,
+};
+
+export const CING_HATUN_DURATION_FRAMES = 900; // 30sn @ 30fps
