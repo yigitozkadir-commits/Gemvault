@@ -9,6 +9,8 @@ import {
   ChingHatunFilmV2Vertical,
 } from "./scenes/ChingHatun";
 import { TaidulaFilm } from "./scenes/Taidula";
+import { FilmWithOutro } from "./components/FilmWithOutro";
+import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
   VIDEO_CONFIG,
   SCENE_DURATION_FRAMES,
@@ -18,6 +20,23 @@ import {
   TAIDULA_VIDEO_CONFIG,
   TAIDULA_DURATION_FRAMES,
 } from "./theme";
+
+// Her seri filminin sonuna GÖKUMAY kapanış imzası eklenir.
+const ChingHatunWithOutro: React.FC = () => (
+  <FilmWithOutro film={<ChingHatunFilm />} filmFrames={CING_HATUN_DURATION_FRAMES} />
+);
+const ChingHatunVerticalWithOutro: React.FC = () => (
+  <FilmWithOutro film={<ChingHatunFilmVertical />} filmFrames={CING_HATUN_DURATION_FRAMES} />
+);
+const ChingHatunV2WithOutro: React.FC = () => (
+  <FilmWithOutro film={<ChingHatunFilmV2 />} filmFrames={CING_HATUN_DURATION_FRAMES} />
+);
+const ChingHatunV2VerticalWithOutro: React.FC = () => (
+  <FilmWithOutro film={<ChingHatunFilmV2Vertical />} filmFrames={CING_HATUN_DURATION_FRAMES} />
+);
+const TaidulaWithOutro: React.FC = () => (
+  <FilmWithOutro film={<TaidulaFilm />} filmFrames={TAIDULA_DURATION_FRAMES} />
+);
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -40,40 +59,40 @@ export const RemotionRoot: React.FC = () => {
       />
       <Composition
         id="ChingHatun"
-        component={ChingHatunFilm}
-        durationInFrames={CING_HATUN_DURATION_FRAMES}
+        component={ChingHatunWithOutro}
+        durationInFrames={CING_HATUN_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
         fps={CING_HATUN_VIDEO_CONFIG.fps}
         width={CING_HATUN_VIDEO_CONFIG.width}
         height={CING_HATUN_VIDEO_CONFIG.height}
       />
       <Composition
         id="ChingHatunVertical"
-        component={ChingHatunFilmVertical}
-        durationInFrames={CING_HATUN_DURATION_FRAMES}
+        component={ChingHatunVerticalWithOutro}
+        durationInFrames={CING_HATUN_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
         fps={CING_HATUN_VERTICAL_VIDEO_CONFIG.fps}
         width={CING_HATUN_VERTICAL_VIDEO_CONFIG.width}
         height={CING_HATUN_VERTICAL_VIDEO_CONFIG.height}
       />
       <Composition
         id="ChingHatunV2"
-        component={ChingHatunFilmV2}
-        durationInFrames={CING_HATUN_DURATION_FRAMES}
+        component={ChingHatunV2WithOutro}
+        durationInFrames={CING_HATUN_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
         fps={CING_HATUN_VIDEO_CONFIG.fps}
         width={CING_HATUN_VIDEO_CONFIG.width}
         height={CING_HATUN_VIDEO_CONFIG.height}
       />
       <Composition
         id="ChingHatunV2Vertical"
-        component={ChingHatunFilmV2Vertical}
-        durationInFrames={CING_HATUN_DURATION_FRAMES}
+        component={ChingHatunV2VerticalWithOutro}
+        durationInFrames={CING_HATUN_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
         fps={CING_HATUN_VERTICAL_VIDEO_CONFIG.fps}
         width={CING_HATUN_VERTICAL_VIDEO_CONFIG.width}
         height={CING_HATUN_VERTICAL_VIDEO_CONFIG.height}
       />
       <Composition
         id="Taidula"
-        component={TaidulaFilm}
-        durationInFrames={TAIDULA_DURATION_FRAMES}
+        component={TaidulaWithOutro}
+        durationInFrames={TAIDULA_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
         fps={TAIDULA_VIDEO_CONFIG.fps}
         width={TAIDULA_VIDEO_CONFIG.width}
         height={TAIDULA_VIDEO_CONFIG.height}
