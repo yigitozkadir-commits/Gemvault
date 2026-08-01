@@ -100,4 +100,4 @@ export const ORUMCEK_ADAM_VIDEO_CONFIG = {
   fps: 30,
 };
 
-export const ORUMCEK_ADAM_DURATION_FRAMES = 900; // 30sn @ 30fps
+export const ORUMCEK_ADAM_DURATION_FRAMES = 880; // ~29.3sn @ 30fps — Uyanış hızlandırılıp kapanışta freeze eklendi
