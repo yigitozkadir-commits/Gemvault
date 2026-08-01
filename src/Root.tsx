@@ -8,12 +8,15 @@ import {
   ChingHatunFilmV2,
   ChingHatunFilmV2Vertical,
 } from "./scenes/ChingHatun";
+import { TaidulaFilm } from "./scenes/Taidula";
 import {
   VIDEO_CONFIG,
   SCENE_DURATION_FRAMES,
   CING_HATUN_VIDEO_CONFIG,
   CING_HATUN_DURATION_FRAMES,
   CING_HATUN_VERTICAL_VIDEO_CONFIG,
+  TAIDULA_VIDEO_CONFIG,
+  TAIDULA_DURATION_FRAMES,
 } from "./theme";
 
 export const RemotionRoot: React.FC = () => {
@@ -66,6 +69,14 @@ export const RemotionRoot: React.FC = () => {
         fps={CING_HATUN_VERTICAL_VIDEO_CONFIG.fps}
         width={CING_HATUN_VERTICAL_VIDEO_CONFIG.width}
         height={CING_HATUN_VERTICAL_VIDEO_CONFIG.height}
+      />
+      <Composition
+        id="Taidula"
+        component={TaidulaFilm}
+        durationInFrames={TAIDULA_DURATION_FRAMES}
+        fps={TAIDULA_VIDEO_CONFIG.fps}
+        width={TAIDULA_VIDEO_CONFIG.width}
+        height={TAIDULA_VIDEO_CONFIG.height}
       />
     </>
   );

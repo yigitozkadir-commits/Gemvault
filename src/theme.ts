@@ -44,3 +44,14 @@ export const CING_HATUN_VERTICAL_VIDEO_CONFIG = {
   height: 1920,
   fps: 30,
 };
+
+// "Bozkır Hatunları" serisi — Taidula. Kaynak video 30sn/900 frame ama
+// genişletilmiş anlatım (~36.4sn) daha uzun sürdüğü için kapanışta
+// freeze ile video, sesle aynı anda biter.
+export const TAIDULA_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const TAIDULA_DURATION_FRAMES = 1110; // ~37sn @ 30fps
