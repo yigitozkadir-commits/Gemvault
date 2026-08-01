@@ -10,6 +10,7 @@ import {
 } from "./scenes/ChingHatun";
 import { TaidulaFilm } from "./scenes/Taidula";
 import { TerkenHatunFilm } from "./scenes/TerkenHatun";
+import { SuyumbikeHatunFilm } from "./scenes/SuyumbikeHatun";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -22,6 +23,8 @@ import {
   TAIDULA_DURATION_FRAMES,
   TERKEN_HATUN_VIDEO_CONFIG,
   TERKEN_HATUN_DURATION_FRAMES,
+  SUYUMBIKE_HATUN_VIDEO_CONFIG,
+  SUYUMBIKE_HATUN_DURATION_FRAMES,
 } from "./theme";
 
 // Her seri filminin sonuna GÖKUMAY kapanış imzası eklenir.
@@ -42,6 +45,9 @@ const TaidulaWithOutro: React.FC = () => (
 );
 const TerkenHatunWithOutro: React.FC = () => (
   <FilmWithOutro film={<TerkenHatunFilm />} filmFrames={TERKEN_HATUN_DURATION_FRAMES} />
+);
+const SuyumbikeHatunWithOutro: React.FC = () => (
+  <FilmWithOutro film={<SuyumbikeHatunFilm />} filmFrames={SUYUMBIKE_HATUN_DURATION_FRAMES} />
 );
 
 export const RemotionRoot: React.FC = () => {
@@ -110,6 +116,14 @@ export const RemotionRoot: React.FC = () => {
         fps={TERKEN_HATUN_VIDEO_CONFIG.fps}
         width={TERKEN_HATUN_VIDEO_CONFIG.width}
         height={TERKEN_HATUN_VIDEO_CONFIG.height}
+      />
+      <Composition
+        id="SuyumbikeHatun"
+        component={SuyumbikeHatunWithOutro}
+        durationInFrames={SUYUMBIKE_HATUN_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
+        fps={SUYUMBIKE_HATUN_VIDEO_CONFIG.fps}
+        width={SUYUMBIKE_HATUN_VIDEO_CONFIG.width}
+        height={SUYUMBIKE_HATUN_VIDEO_CONFIG.height}
       />
     </>
   );

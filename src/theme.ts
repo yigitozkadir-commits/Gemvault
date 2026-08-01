@@ -66,3 +66,14 @@ export const TERKEN_HATUN_VIDEO_CONFIG = {
 };
 
 export const TERKEN_HATUN_DURATION_FRAMES = 1068; // ~35.6sn @ 30fps
+
+// "Bozkır Hatunları" serisi — Süyümbike Hatun (Kazan Hanlığı). Kaynak video
+// 30sn/900 frame, genişletilmiş anlatım (~32.9sn) videodan uzun olduğu için
+// kapanışta freeze ile video, sesle aynı anda biter.
+export const SUYUMBIKE_HATUN_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const SUYUMBIKE_HATUN_DURATION_FRAMES = 1018; // ~33.9sn @ 30fps
