@@ -106,40 +106,46 @@ export const OrumcekAdamFilm: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#000", opacity }}>
-      {/* Perde 1 — "Uyanış", 1.6x hızlandırılmış (sakin kısım atlanıyor) */}
-      <Sequence from={0} durationInFrames={ACT1_COMP_FRAMES}>
-        <OffthreadVideo
-          src={staticFile(VIDEO_SRC)}
-          volume={0}
-          playbackRate={ACT1_SPEED}
-          style={VIDEO_STYLE}
-        />
-      </Sequence>
+      {frame < FREEZE_START ? (
+        <>
+          {/* Perde 1 — "Uyanış", 1.6x hızlandırılmış (sakin kısım atlanıyor) */}
+          <Sequence from={0} durationInFrames={ACT1_COMP_FRAMES}>
+            <OffthreadVideo
+              src={staticFile(VIDEO_SRC)}
+              volume={0}
+              playbackRate={ACT1_SPEED}
+              style={VIDEO_STYLE}
+            />
+          </Sequence>
 
-      {/* Perde 2 — "Dönüşüm", normal hız */}
-      <Sequence
-        from={ACT2_START}
-        durationInFrames={ACT2_FRAMES}
-        trimBefore={ACT2_TRIM_BEFORE}
-      >
-        <OffthreadVideo src={staticFile(VIDEO_SRC)} volume={0} style={VIDEO_STYLE} />
-      </Sequence>
+          {/* Perde 2 — "Dönüşüm", normal hız */}
+          <Sequence
+            from={ACT2_START}
+            durationInFrames={ACT2_FRAMES}
+            trimBefore={ACT2_TRIM_BEFORE}
+          >
+            <OffthreadVideo src={staticFile(VIDEO_SRC)} volume={0} style={VIDEO_STYLE} />
+          </Sequence>
 
-      {/* Perde 3 — "Kahramanın Duruşu", normal hız */}
-      <Sequence
-        from={ACT3_START}
-        durationInFrames={ACT3_FRAMES}
-        trimBefore={ACT3_TRIM_BEFORE}
-      >
-        <OffthreadVideo src={staticFile(VIDEO_SRC)} volume={0} style={VIDEO_STYLE} />
-      </Sequence>
-
-      {/* Kapanış — son karede donup zafer duruşu asılı kalır */}
-      <Sequence from={FREEZE_START} durationInFrames={FREEZE_FRAMES}>
+          {/* Perde 3 — "Kahramanın Duruşu", normal hız */}
+          <Sequence
+            from={ACT3_START}
+            durationInFrames={ACT3_FRAMES}
+            trimBefore={ACT3_TRIM_BEFORE}
+          >
+            <OffthreadVideo src={staticFile(VIDEO_SRC)} volume={0} style={VIDEO_STYLE} />
+          </Sequence>
+        </>
+      ) : (
+        // Kapanış — son karede donup zafer duruşu asılı kalır. Sequence'e
+        // sarmadan doğrudan üst seviyede render ediliyor ki Freeze'in
+        // frame prop'u OffthreadVideo'nun KENDİ (trimBefore'suz) zaman
+        // eksenine göre yorumlansın — bir Sequence içine alınırsa Freeze
+        // yanlış kareye (aktif Sequence'in yerel karesine) kilitleniyor.
         <Freeze frame={FREEZE_AT_SOURCE_FRAME}>
           <OffthreadVideo src={staticFile(VIDEO_SRC)} volume={0} style={VIDEO_STYLE} />
         </Freeze>
-      </Sequence>
+      )}
 
       {/* Anlatım — her perdenin başında */}
       <Sequence from={NARRATION1_START}>
