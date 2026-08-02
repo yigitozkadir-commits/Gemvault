@@ -13,6 +13,7 @@ import { TerkenHatunFilm } from "./scenes/TerkenHatun";
 import { SuyumbikeHatunFilm } from "./scenes/SuyumbikeHatun";
 import { SubeshiCadilariFilm } from "./scenes/SubeshiCadilari";
 import { OrumcekAdamFilm } from "./scenes/OrumcekAdam";
+import { UkokPrensesiFilm } from "./scenes/UkokPrensesi";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -31,6 +32,8 @@ import {
   SUBESHI_CADILARI_DURATION_FRAMES,
   ORUMCEK_ADAM_VIDEO_CONFIG,
   ORUMCEK_ADAM_DURATION_FRAMES,
+  UKOK_PRENSESI_VIDEO_CONFIG,
+  UKOK_PRENSESI_DURATION_FRAMES,
 } from "./theme";
 
 // Her seri filminin sonuna GÖKUMAY kapanış imzası eklenir.
@@ -57,6 +60,9 @@ const SuyumbikeHatunWithOutro: React.FC = () => (
 );
 const SubeshiCadilariWithOutro: React.FC = () => (
   <FilmWithOutro film={<SubeshiCadilariFilm />} filmFrames={SUBESHI_CADILARI_DURATION_FRAMES} />
+);
+const UkokPrensesiWithOutro: React.FC = () => (
+  <FilmWithOutro film={<UkokPrensesiFilm />} filmFrames={UKOK_PRENSESI_DURATION_FRAMES} />
 );
 
 export const RemotionRoot: React.FC = () => {
@@ -141,6 +147,14 @@ export const RemotionRoot: React.FC = () => {
         fps={SUBESHI_CADILARI_VIDEO_CONFIG.fps}
         width={SUBESHI_CADILARI_VIDEO_CONFIG.width}
         height={SUBESHI_CADILARI_VIDEO_CONFIG.height}
+      />
+      <Composition
+        id="UkokPrensesi"
+        component={UkokPrensesiWithOutro}
+        durationInFrames={UKOK_PRENSESI_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
+        fps={UKOK_PRENSESI_VIDEO_CONFIG.fps}
+        width={UKOK_PRENSESI_VIDEO_CONFIG.width}
+        height={UKOK_PRENSESI_VIDEO_CONFIG.height}
       />
 
       {/* Bozkır Hatunları serisinden bağımsız hobi projesi — kapanış imzası yok. */}

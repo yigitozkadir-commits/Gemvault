@@ -101,3 +101,15 @@ export const ORUMCEK_ADAM_VIDEO_CONFIG = {
 };
 
 export const ORUMCEK_ADAM_DURATION_FRAMES = 880; // ~29.3sn @ 30fps — Uyanış hızlandırılıp kapanışta freeze eklendi
+
+// "Bozkır Hatunları" / Gök Umay serisi — Ukok Prensesi. Aynı Taidula
+// klibi (taht/mühür/tower-çöl split-screen) farklı bir anlatımla deneniyor.
+// Metin çok daha uzun (13 replik) olduğu için narration (~53sn) videodan
+// (30sn) belirgin şekilde uzun sürüyor — kapanışta uzun bir freeze var.
+export const UKOK_PRENSESI_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const UKOK_PRENSESI_DURATION_FRAMES = 1710; // 57sn @ 30fps
