@@ -11,7 +11,7 @@ import {
   useCurrentFrame,
 } from "remotion";
 import { ColorGrade } from "../components/ColorGrade";
-import { CaptionTrack } from "../components/Captions";
+import { AnimatedCaptions } from "../components/AnimatedCaptions";
 import { CING_HATUN_CAPTIONS } from "../data/chingHatunCaptions";
 import { CING_HATUN_DURATION_FRAMES } from "../theme";
 
@@ -93,11 +93,7 @@ export const ChingHatunFilm: React.FC<{
         </AbsoluteFill>
       </ColorGrade>
 
-      <CaptionTrack
-        cues={CING_HATUN_CAPTIONS}
-        fontSize={orientation === "vertical" ? 44 : 38}
-        maxWidthPercent={orientation === "vertical" ? 88 : 76}
-      />
+      <AnimatedCaptions cues={CING_HATUN_CAPTIONS} />
 
       {/* Anlatım — tek parça, kesintisiz (frame 0'dan başlar) */}
       <Audio src={staticFile("audio/narration.mp3")} volume={1} />

@@ -1,10 +1,7 @@
 // ElevenLabs "with-timestamps" hizalamasından türetilmiştir (30fps).
 // Kaynak: public/audio/narration.mp3 — Deniz (Calm Narrator) sesi.
-export interface CaptionCue {
-  text: string;
-  startFrame: number;
-  endFrame: number;
-}
+import type { CaptionCue } from "../types/captions";
+export type { CaptionCue, CaptionWord } from "../types/captions";
 
 export const CING_HATUN_CAPTIONS: CaptionCue[] = [
   {

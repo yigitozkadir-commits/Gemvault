@@ -11,7 +11,7 @@ import {
   useCurrentFrame,
 } from "remotion";
 import { ColorGrade } from "../components/ColorGrade";
-import { CaptionTrack } from "../components/Captions";
+import { AnimatedCaptions } from "../components/AnimatedCaptions";
 import { UKOK_PRENSESI_CAPTIONS } from "../data/ukokPrensesiCaptions";
 import { UKOK_PRENSESI_DURATION_FRAMES } from "../theme";
 
@@ -98,7 +98,7 @@ export const UkokPrensesiFilm: React.FC = () => {
         </AbsoluteFill>
       </ColorGrade>
 
-      <CaptionTrack cues={UKOK_PRENSESI_CAPTIONS} fontSize={44} maxWidthPercent={88} />
+      <AnimatedCaptions cues={UKOK_PRENSESI_CAPTIONS} />
 
       {/* Anlatım — tek parça, kesintisiz (frame 0'dan başlar) */}
       <Audio src={staticFile(NARRATION_SRC)} volume={1} />

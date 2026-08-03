@@ -113,3 +113,14 @@ export const UKOK_PRENSESI_VIDEO_CONFIG = {
 };
 
 export const UKOK_PRENSESI_DURATION_FRAMES = 1710; // 57sn @ 30fps
+
+// "Bozkır Hatunları" / Gök Umay serisi — Loulan Güzeli (Tiebanhe M1).
+// Beş Altın Kural'a uyan en "akademik/nötr" tonlu video — seride en yüksek
+// stability, en düşük style. Kaynak video 30sn/900 frame, anlatım ~33.6sn.
+export const LOULAN_GUZELI_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const LOULAN_GUZELI_DURATION_FRAMES = 1040; // ~34.7sn @ 30fps

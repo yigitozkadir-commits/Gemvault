@@ -11,7 +11,7 @@ import {
   useCurrentFrame,
 } from "remotion";
 import { ColorGrade } from "../components/ColorGrade";
-import { CaptionTrack } from "../components/Captions";
+import { AnimatedCaptions } from "../components/AnimatedCaptions";
 import { TERKEN_HATUN_CAPTIONS } from "../data/terkenHatunCaptions";
 import { TERKEN_HATUN_DURATION_FRAMES } from "../theme";
 
@@ -95,7 +95,7 @@ export const TerkenHatunFilm: React.FC = () => {
         </AbsoluteFill>
       </ColorGrade>
 
-      <CaptionTrack cues={TERKEN_HATUN_CAPTIONS} fontSize={44} maxWidthPercent={88} />
+      <AnimatedCaptions cues={TERKEN_HATUN_CAPTIONS} />
 
       {/* Anlatım — tek parça, kesintisiz (frame 0'dan başlar) */}
       <Audio src={staticFile(NARRATION_SRC)} volume={1} />

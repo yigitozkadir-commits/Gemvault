@@ -11,7 +11,7 @@ import {
   useCurrentFrame,
 } from "remotion";
 import { ColorGrade } from "../components/ColorGrade";
-import { CaptionTrack } from "../components/Captions";
+import { AnimatedCaptions } from "../components/AnimatedCaptions";
 import { SUYUMBIKE_HATUN_CAPTIONS } from "../data/suyumbikeHatunCaptions";
 import { SUYUMBIKE_HATUN_DURATION_FRAMES } from "../theme";
 
@@ -95,7 +95,7 @@ export const SuyumbikeHatunFilm: React.FC = () => {
         </AbsoluteFill>
       </ColorGrade>
 
-      <CaptionTrack cues={SUYUMBIKE_HATUN_CAPTIONS} fontSize={44} maxWidthPercent={88} />
+      <AnimatedCaptions cues={SUYUMBIKE_HATUN_CAPTIONS} />
 
       {/* Anlatım — tek parça, kesintisiz (frame 0'dan başlar) */}
       <Audio src={staticFile(NARRATION_SRC)} volume={1} />

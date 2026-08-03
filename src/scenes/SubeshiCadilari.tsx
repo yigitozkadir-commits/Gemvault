@@ -11,7 +11,7 @@ import {
   useCurrentFrame,
 } from "remotion";
 import { ColorGrade } from "../components/ColorGrade";
-import { CaptionTrack } from "../components/Captions";
+import { AnimatedCaptions } from "../components/AnimatedCaptions";
 import { SUBESHI_CADILARI_CAPTIONS } from "../data/subeshiCadilariCaptions";
 import { SUBESHI_CADILARI_DURATION_FRAMES } from "../theme";
 
@@ -99,7 +99,7 @@ export const SubeshiCadilariFilm: React.FC = () => {
         </AbsoluteFill>
       </ColorGrade>
 
-      <CaptionTrack cues={SUBESHI_CADILARI_CAPTIONS} fontSize={44} maxWidthPercent={88} />
+      <AnimatedCaptions cues={SUBESHI_CADILARI_CAPTIONS} />
 
       {/* Anlatım — tek parça, kesintisiz (frame 0'dan başlar) */}
       <Audio src={staticFile(NARRATION_SRC)} volume={1} />

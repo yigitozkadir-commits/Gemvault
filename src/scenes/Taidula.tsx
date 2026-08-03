@@ -11,7 +11,7 @@ import {
   useCurrentFrame,
 } from "remotion";
 import { ColorGrade } from "../components/ColorGrade";
-import { CaptionTrack } from "../components/Captions";
+import { AnimatedCaptions } from "../components/AnimatedCaptions";
 import { TAIDULA_CAPTIONS } from "../data/taidulaCaptions";
 import { TAIDULA_DURATION_FRAMES } from "../theme";
 
@@ -94,7 +94,7 @@ export const TaidulaFilm: React.FC = () => {
         </AbsoluteFill>
       </ColorGrade>
 
-      <CaptionTrack cues={TAIDULA_CAPTIONS} fontSize={44} maxWidthPercent={88} />
+      <AnimatedCaptions cues={TAIDULA_CAPTIONS} />
 
       {/* Anlatım — tek parça, kesintisiz (frame 0'dan başlar) */}
       <Audio src={staticFile(NARRATION_SRC)} volume={1} />
