@@ -85,9 +85,10 @@ export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => 
 
   const words = active.words ?? synthesizeWords(active);
 
-  // Yüksekliğin yüzdesi olarak font boyutu — sabit piksel yok.
-  const baseFontSize = height * 0.052;
-  const maxWidthPx = width * 0.82;
+  // Yüksekliğin yüzdesi olarak font boyutu — sabit piksel yok. Instagram
+  // için daha büyük/okunaklı olsun diye orijinal 0.052'den yükseltildi.
+  const baseFontSize = height * 0.068;
+  const maxWidthPx = width * 0.88;
 
   // Gerçek DOM ölçümü olmadan kaba bir tahmin: ortalama karakter genişliği
   // ~fontSize*0.56 (Montserrat ExtraBold için makul bir oran). Uzun
@@ -102,7 +103,7 @@ export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => 
     (TARGET_LINES * maxWidthPx) / (CHAR_WIDTH_RATIO * Math.max(1, active.text.length));
   const fontSize = Math.min(baseFontSize, Math.max(baseFontSize * 0.45, fitFontSize));
 
-  const gradientHeight = height * (120 / 1080);
+  const gradientHeight = height * (170 / 1080);
 
   const cueLocalIn = frame - active.startFrame;
   const cueLocalOut = frame - active.endFrame;
@@ -135,7 +136,7 @@ export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => 
       >
         <div
           style={{
-            maxWidth: "82%",
+            maxWidth: "88%",
             textAlign: "center",
             fontFamily,
             fontWeight: 800,
