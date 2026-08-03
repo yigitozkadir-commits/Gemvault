@@ -132,13 +132,14 @@ export const LOULAN_GUZELI_DURATION_FRAMES = 1489; // ~49.6sn @ 30fps
 // Bıraktıkları"). v1'in "kimlik gizemi" açısından farklı olarak "eller ve
 // günlük yaşam" açısı — daha sıcak ton (düşük stability / yüksek style).
 // Script revize edildi (yün/dokuma teknolojisinin Yakın Doğu kökeni,
-// Shishlina 2021 / Wagner 2022 atıflı) ve anlatım artık ~53.4sn — kaynak
-// videodan (30sn/900 frame) belirgin uzun, bu yüzden standart seri
-// overhang deseni (freeze + kapanış fade) kullanılıyor.
+// Shishlina 2021 / Wagner 2022 atıflı; "MÖ" kısaltması "milattan önce"
+// olarak düzeltildi) ve anlatım artık ~58.1sn. Kapanışta artık sadece
+// v2'nin kendi klibi donmuyor — v1'in mezar sahnesine geçiş yapıp onun
+// üzerinde donuyor (iki filmi birbirine bağlayan bir kapanış).
 export const LOULAN_GUZELI_V2_VIDEO_CONFIG = {
   width: 1080,
   height: 1920,
   fps: 30,
 };
 
-export const LOULAN_GUZELI_V2_DURATION_FRAMES = 1625; // ~54.2sn @ 30fps
+export const LOULAN_GUZELI_V2_DURATION_FRAMES = 1769; // ~59sn @ 30fps
