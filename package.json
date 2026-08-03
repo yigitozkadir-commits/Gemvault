@@ -17,6 +17,7 @@
     "build:orumcekadam": "remotion render src/index.ts OrumcekAdam out/orumcek-adam.mp4",
     "build:ukok": "remotion render src/index.ts UkokPrensesi out/ukok-prensesi.mp4",
     "build:loulan": "remotion render src/index.ts LoulanGuzeli out/loulan-guzeli.mp4",
+    "build:loulan-v2": "remotion render src/index.ts LoulanGuzeliV2 out/loulan-guzeli-v2.mp4",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {

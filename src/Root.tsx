@@ -15,6 +15,7 @@ import { SubeshiCadilariFilm } from "./scenes/SubeshiCadilari";
 import { OrumcekAdamFilm } from "./scenes/OrumcekAdam";
 import { UkokPrensesiFilm } from "./scenes/UkokPrensesi";
 import { LoulanGuzeliFilm } from "./scenes/LoulanGuzeli";
+import { LoulanGuzeliV2Film } from "./scenes/LoulanGuzeliV2";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -37,6 +38,8 @@ import {
   UKOK_PRENSESI_DURATION_FRAMES,
   LOULAN_GUZELI_VIDEO_CONFIG,
   LOULAN_GUZELI_DURATION_FRAMES,
+  LOULAN_GUZELI_V2_VIDEO_CONFIG,
+  LOULAN_GUZELI_V2_DURATION_FRAMES,
 } from "./theme";
 
 // Her seri filminin sonuna GÖKUMAY kapanış imzası eklenir.
@@ -69,6 +72,9 @@ const UkokPrensesiWithOutro: React.FC = () => (
 );
 const LoulanGuzeliWithOutro: React.FC = () => (
   <FilmWithOutro film={<LoulanGuzeliFilm />} filmFrames={LOULAN_GUZELI_DURATION_FRAMES} />
+);
+const LoulanGuzeliV2WithOutro: React.FC = () => (
+  <FilmWithOutro film={<LoulanGuzeliV2Film />} filmFrames={LOULAN_GUZELI_V2_DURATION_FRAMES} />
 );
 
 export const RemotionRoot: React.FC = () => {
@@ -169,6 +175,14 @@ export const RemotionRoot: React.FC = () => {
         fps={LOULAN_GUZELI_VIDEO_CONFIG.fps}
         width={LOULAN_GUZELI_VIDEO_CONFIG.width}
         height={LOULAN_GUZELI_VIDEO_CONFIG.height}
+      />
+      <Composition
+        id="LoulanGuzeliV2"
+        component={LoulanGuzeliV2WithOutro}
+        durationInFrames={LOULAN_GUZELI_V2_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
+        fps={LOULAN_GUZELI_V2_VIDEO_CONFIG.fps}
+        width={LOULAN_GUZELI_V2_VIDEO_CONFIG.width}
+        height={LOULAN_GUZELI_V2_VIDEO_CONFIG.height}
       />
 
       {/* Bozkır Hatunları serisinden bağımsız hobi projesi — kapanış imzası yok. */}

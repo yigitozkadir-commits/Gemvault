@@ -86,8 +86,9 @@ export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => 
   const words = active.words ?? synthesizeWords(active);
 
   // Yüksekliğin yüzdesi olarak font boyutu — sabit piksel yok. Instagram
-  // için daha büyük/okunaklı olsun diye orijinal 0.052'den yükseltildi.
-  const baseFontSize = height * 0.068;
+  // için daha büyük/okunaklı olsun diye orijinal 0.052'den 0.068'e, sonra
+  // ekstra %20 daha büyütme talebiyle 0.068 * 1.2 = 0.0816'ya yükseltildi.
+  const baseFontSize = height * 0.068 * 1.2;
   const maxWidthPx = width * 0.88;
 
   // Gerçek DOM ölçümü olmadan kaba bir tahmin: ortalama karakter genişliği
@@ -103,7 +104,10 @@ export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => 
     (TARGET_LINES * maxWidthPx) / (CHAR_WIDTH_RATIO * Math.max(1, active.text.length));
   const fontSize = Math.min(baseFontSize, Math.max(baseFontSize * 0.45, fitFontSize));
 
-  const gradientHeight = height * (170 / 1080);
+  // Yazı bloğu hem %20 büyüdüğü hem de %10 yukarı kaydığı için, altındaki
+  // karartma/vignette gradyanı da orantılı olarak büyütüldü — aksi halde
+  // büyümüş metnin üst kısmı gradyansız (düz video üzerinde) kalırdı.
+  const gradientHeight = height * (170 / 1080) * 1.2 + height * 0.1;
 
   const cueLocalIn = frame - active.startFrame;
   const cueLocalOut = frame - active.endFrame;
@@ -130,7 +134,8 @@ export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => 
         style={{
           justifyContent: "flex-end",
           alignItems: "center",
-          paddingBottom: height * 0.03,
+          // Ekstra talep üzerine format %10 yukarı kaydırıldı (0.03 -> 0.13).
+          paddingBottom: height * 0.13,
           opacity: blockOpacity,
         }}
       >

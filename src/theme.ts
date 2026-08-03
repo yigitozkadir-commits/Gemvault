@@ -124,3 +124,18 @@ export const LOULAN_GUZELI_VIDEO_CONFIG = {
 };
 
 export const LOULAN_GUZELI_DURATION_FRAMES = 1040; // ~34.7sn @ 30fps
+
+// "Bozkır Hatunları" / Gök Umay serisi — Loulan Güzeli v2 ("Elleriyle
+// Bıraktıkları"). v1'in "kimlik gizemi" açısından farklı olarak "eller ve
+// günlük yaşam" açısı — daha sıcak ton (düşük stability / yüksek style).
+// Seride ilk kez anlatım (~28.05sn) kaynak videodan (30sn/900 frame) KISA
+// sürüyor — bu yüzden freeze, önceki videolardaki gibi anlatımı
+// yetiştirmek için değil, kapanışta dipnotun rahat okunması için kısa bir
+// "tutma" (hold) olarak kullanılıyor.
+export const LOULAN_GUZELI_V2_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const LOULAN_GUZELI_V2_DURATION_FRAMES = 930; // 900 (video) + 30 frame kapanış tutması
