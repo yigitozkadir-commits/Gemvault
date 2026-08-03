@@ -116,14 +116,16 @@ export const UKOK_PRENSESI_DURATION_FRAMES = 1710; // 57sn @ 30fps
 
 // "Bozkır Hatunları" / Gök Umay serisi — Loulan Güzeli (Tiebanhe M1).
 // Beş Altın Kural'a uyan en "akademik/nötr" tonlu video — seride en yüksek
-// stability, en düşük style. Kaynak video 30sn/900 frame, anlatım ~33.6sn.
+// stability, en düşük style. Kaynak video 30sn/900 frame; anlatım 2021
+// Nature genom çalışmasına atıfla revize edildi ve artık çok daha uzun
+// (~73sn) — kapanışta Ukok Prensesi'ndekine benzer uzun bir freeze var.
 export const LOULAN_GUZELI_VIDEO_CONFIG = {
   width: 1080,
   height: 1920,
   fps: 30,
 };
 
-export const LOULAN_GUZELI_DURATION_FRAMES = 1040; // ~34.7sn @ 30fps
+export const LOULAN_GUZELI_DURATION_FRAMES = 2218; // ~73.9sn @ 30fps
 
 // "Bozkır Hatunları" / Gök Umay serisi — Loulan Güzeli v2 ("Elleriyle
 // Bıraktıkları"). v1'in "kimlik gizemi" açısından farklı olarak "eller ve
