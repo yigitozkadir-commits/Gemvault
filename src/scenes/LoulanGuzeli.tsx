@@ -16,24 +16,24 @@ import { FootnoteCaption } from "../components/FootnoteCaption";
 import { LOULAN_GUZELI_CAPTIONS, LOULAN_GUZELI_FOOTNOTE } from "../data/loulanGuzeliCaptions";
 import { LOULAN_GUZELI_DURATION_FRAMES } from "../theme";
 
-const TOTAL_FRAMES = LOULAN_GUZELI_DURATION_FRAMES; // 2218 (~73.9sn @ 30fps)
+const TOTAL_FRAMES = LOULAN_GUZELI_DURATION_FRAMES; // 1489 (~49.6sn @ 30fps)
 const VIDEO_SRC = "videos/loulan-guzeli-scene.mp4";
 const NARRATION_SRC = "audio/loulan_narration.mp3";
 const AMBIENT_SRC = "audio/ambient_wind_fire.mp3"; // seri ile aynı — tutarlılık
 
 const FREEZE_AT = 899; // kaynak video 900 frame (30sn) — son karede donar
 const EASE_FRAMES = 8; // freeze'e sert değil, crossfade ile yumuşak giriş
-// Revize anlatım (~73sn) kaynak videodan (30sn) çok daha uzun sürdüğü için
-// Ukok Prensesi'ndekine benzer uzun bir freeze var (~44sn donmuş kare).
-const OUTRO_START = TOTAL_FRAMES - 30; // 2188 — anlatımın bittiği ana denk gelir
-const AMBIENT_FADE_START = OUTRO_START - 30; // 2158 -> 2188 arası 0'a iner
+// Anlatım 1.5x hızlandırıldıktan sonra (~48.8sn) freeze çok daha kısa
+// (~19.7sn donmuş kare) — önceki (73sn/44sn freeze) sürümden belirgin kısa.
+const OUTRO_START = TOTAL_FRAMES - 30; // 1459 — anlatımın bittiği ana denk gelir
+const AMBIENT_FADE_START = OUTRO_START - 30; // 1429 -> 1459 arası 0'a iner
 const AMBIENT_LOOP_FRAMES = 22 * 30; // Çing Hatun projesindeki ambiyans klibi ~22sn
 const AMBIENT_VOLUME = 0.06;
 const INTRO_FADE_FRAMES = 15;
 
-// Son replik ("Kaynaklarıyla birlikte...") 2069-2187 arası konuşuluyor;
+// Son replik ("Kaynaklarıyla birlikte...") 1379-1458 arası konuşuluyor;
 // dipnot bu repliğin ortasında belirip kapanış fade'i boyunca ekranda kalıyor.
-const FOOTNOTE_START = 2130;
+const FOOTNOTE_START = 1420;
 const FOOTNOTE_END = TOTAL_FRAMES;
 
 const VIDEO_STYLE: React.CSSProperties = {
@@ -64,9 +64,9 @@ export const LoulanGuzeliFilm: React.FC = () => {
   });
   const globalOpacity = Math.min(introFade, outroFade);
 
-  // Freeze artık çok uzun sürdüğü için (~44sn) Ukok Prensesi'ndeki gibi zoom
-  // aralığı daha belirgin — "donmuş ama nefes alan kare" hissi sürsün diye.
-  const zoom = interpolate(frame, [0, TOTAL_FRAMES], [1, 1.2], {
+  // Freeze artık orta uzunlukta (~19.7sn) — Taidula/Terken Hatun gibi kısa
+  // overhang videolarından biraz daha belirgin bir zoom kullanıyoruz.
+  const zoom = interpolate(frame, [0, TOTAL_FRAMES], [1, 1.1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
   });
