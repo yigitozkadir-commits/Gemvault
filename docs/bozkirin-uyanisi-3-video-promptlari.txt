@@ -1,0 +1,105 @@
+BOZKIRIN UYANIŞI — 3 GOOGLE FLOW VİDEO PROMPTU
+==================================================================
+
+GENEL NOT: Üçünde de bilinçli olarak insan karakteri yok (Flow'un
+karakter tutarsızlığı riskini bu videolarda tamamen ortadan kaldırmak
+için) — istisna Video 1'in "image-to-video" seçeneği, çünkü zaten
+üretilmiş gerçek bir görüntüden başlıyor.
+
+==================================================================
+VİDEO 1 — BULUTLARIN YARILMASI (Sayfa 2→3 geçişi, 10 sn)
+==================================================================
+
+SEÇENEK A — Image-to-Video (ÖNERİLEN)
+------------------------------------------------------------------
+Başlangıç karesi olarak yükle: Children_looking_up_at_clouds_...jpeg
+(prompt #3 "Gök Yüzüne Çağrı" çıktın)
+
+Bu görsel zaten sahneyi kurmuş durumda (çocuklar bulutlara bakıyor,
+bulutlar yarılmaya başlamış); Flow'a sadece DEVAMINI animasyonla iste:
+
+Prompt:
+"Animate this exact scene: the heavy grey storm clouds continue to split
+further apart, the gap widening as brilliant golden light pours through
+more intensely, rays sweeping down across the barren steppe and washing
+warm color onto the children and the standing stones for the first
+time. Camera slowly pushes in toward the children from behind. Keep the
+children, landscape, and art style completely unchanged from the source
+image — only the sky, light, and camera move. Cinematic slow motion, no
+new elements, no text, no watermark, no dialogue, no music."
+
+SEÇENEK B — Metinden Video (referanssız üretmek istersen)
+------------------------------------------------------------------
+Prompt:
+"Heavy dark grey storm clouds over a vast empty steppe suddenly
+splitting open down the middle, brilliant golden and copper light
+bursting through the tear and pouring down onto the barren frozen
+ground below. Dust and ice crystals catch the light as warmth spreads
+across the earth. The camera slowly tilts upward toward the opening
+while pushing gently in. Epic, awe-inspiring, hopeful.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal, cinematic slow motion,
+no text, no watermark, no dialogue, no music."
+
+Kamera: Tilt-up + yavaş push-in.
+SFX (elimde hazır): kanat-cirpma.mp3 + rüzgar yükselmesi.
+
+==================================================================
+VİDEO 2 — TOHUMLARIN DÖNÜŞÜMÜ (Sayfa 6→7 geçişi, 10 sn)
+==================================================================
+Henüz bu sahnenin bir statik görseli üretilmedi (12'lik listede #9
+"Baharın İlk Çiçeği" bu temaya en yakın olan — istersen referans olarak
+onu da yükleyebilirsin, ama henüz elimde değil).
+
+Prompt:
+"Cinematic macro timelapse at ground level: glowing golden seeds
+falling onto cold dry steppe earth, each one flaring with light on
+impact and instantly sprouting into vivid turquoise, purple and yellow
+fantasy flowers that unfurl and spread outward across the frame in a
+rushing wave, magical sparkling pollen drifting in warm golden hour
+sunlight.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal, cinematic slow motion,
+no text, no watermark, no dialogue, no music."
+
+Referans olarak yüklenebilir: Standing_stones_altar_frame_drum (renk
+paleti/doku tutarlılığı için — sahne farklı ama ışık/stil aynı olsun).
+
+Kamera: Yer hizası makro tracking.
+SFX (elimde hazır): kus-civiltisi.mp3 girişi + arp yükselişi.
+
+==================================================================
+VİDEO 3 — BUZLARIN KIRILMASI (Sayfa 8→9 geçişi, 10 sn)
+==================================================================
+Prompt:
+"A wide frozen river on the open steppe cracking violently open, thick
+sheets of ice splintering and tilting as bright turquoise meltwater
+surges through and rushes downstream in slow motion, spray catching the
+spring sunlight, snow-capped mountains on the horizon, flock of cranes
+crossing the blue sky high above in V formation.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal, cinematic slow motion,
+no text, no watermark, no dialogue, no music."
+
+Referans olarak yüklenebilir: Giant_bird_flying_with_children (dağ/vadi
+manzarası ve genel ışık paleti tutarlılığı için).
+
+Kamera: Alçak açı, nehir akışını takip eden pan.
+SFX (elimde hazır): buz-kirilma.mp3 + turna-cigligi.mp3.
+
+==================================================================
+ÖZET — HANGİ GÖRSELİ NEREYE YÜKLEYECEKSİN
+==================================================================
+Video 1 → Children_looking_up_at_clouds (başlangıç karesi, Seçenek A)
+Video 2 → (opsiyonel) Standing_stones_altar_frame_drum (stil referansı)
+Video 3 → (opsiyonel) Giant_bird_flying_with_children (stil referansı)
+
+Diğer 3 görsel (Kurşuni Bozkır, Yurt İçi, Turul+Çocuklar Tırmanış) bu
+videolarda kullanılmıyor — onlar zaten kendi statik sahneleri olarak
+kurguya girecek.
