@@ -34,8 +34,8 @@ const NARRATION_SRC = 'audio/bozkirin-uyanisi-anlatim-v2.mp3';
 const MUSIC_SRC = 'audio/bozkirin-uyanisi-muzik-uzun.mp3';
 const SFX = 'audio/sfx';
 
-const MUSIC_DUCK_VOLUME = 0.22;
-const MUSIC_SOLO_VOLUME = 0.6;
+const MUSIC_DUCK_VOLUME = 0.1;
+const MUSIC_SOLO_VOLUME = 0.5;
 const DUCK_RAMP_FRAMES = 25;
 
 const isNarrating = (frame: number) =>
@@ -107,13 +107,13 @@ export const BozkirinUyanisiFilmV2: React.FC = () => {
   musicVolume *= gumDuck;
   musicVolume *= Math.min(introFade, outroFade);
 
-  const windVolume = interpolate(frame, [0, 480, 510], [0.35, 0.35, 0], {
+  const windVolume = interpolate(frame, [0, 720, 750], [0.35, 0.35, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
   const birdVolume = interpolate(
     frame,
-    [6913, 6973, 8493, 8553],
+    [7693, 7753, 9813, 9873],
     [0, 0.25, 0.25, 0],
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
@@ -206,17 +206,17 @@ export const BozkirinUyanisiFilmV2: React.FC = () => {
       <Audio src={staticFile(MUSIC_SRC)} volume={musicVolume} />
 
       {/* Ambiyans: açılışta soğuk rüzgar, çiçeklenme bölümünde kuş cıvıltısı */}
-      <Sequence from={0} durationInFrames={510}>
+      <Sequence from={0} durationInFrames={750}>
         <Audio src={staticFile(`${SFX}/ruzgar-soguk.mp3`)} volume={windVolume} />
       </Sequence>
-      <Sequence from={6913} durationInFrames={8553 - 6913}>
+      <Sequence from={7693} durationInFrames={9873 - 7693}>
         <Loop durationInFrames={601}>
           <Audio src={staticFile(`${SFX}/kus-civiltisi.mp3`)} volume={birdVolume} />
         </Loop>
       </Sequence>
 
       {/* Nokta SFX */}
-      <Sequence from={2554} durationInFrames={160}>
+      <Sequence from={2999} durationInFrames={160}>
         <Audio src={staticFile(`${SFX}/kanat-cirpma.mp3`)} volume={0.5} />
       </Sequence>
       <Sequence from={GUM_FRAME} durationInFrames={130}>
@@ -225,13 +225,13 @@ export const BozkirinUyanisiFilmV2: React.FC = () => {
       <Sequence from={GUM_TRIPLE_FRAME} durationInFrames={250}>
         <Audio src={staticFile(`${SFX}/davul-gum-triple.mp3`)} volume={0.6} />
       </Sequence>
-      <Sequence from={9481} durationInFrames={250}>
+      <Sequence from={10801} durationInFrames={250}>
         <Audio src={staticFile(`${SFX}/at-nal-sesi.mp3`)} volume={0.45} />
       </Sequence>
-      <Sequence from={9781} durationInFrames={250}>
+      <Sequence from={11281} durationInFrames={250}>
         <Audio src={staticFile(`${SFX}/buz-kirilma.mp3`)} volume={0.55} />
       </Sequence>
-      <Sequence from={9781} durationInFrames={250}>
+      <Sequence from={11281} durationInFrames={250}>
         <Audio src={staticFile(`${SFX}/turna-cigligi.mp3`)} volume={0.35} />
       </Sequence>
     </AbsoluteFill>
