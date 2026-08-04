@@ -1,0 +1,240 @@
+BOZKIRIN UYANIŞI — 12 GÖRSEL PROMPTU (Google Flow, tek oturumda)
+==================================================================
+
+ÖNEMLİ TEKNİK NOT:
+Önceki illüstrasyonlar dikey/kare orana yakın üretildiği için videoda
+kırpma sorunu yaşadık. Bu yüzden her prompta "16:9 horizontal landscape
+orientation" ekledim — lütfen Flow'da da çıktı oranını 16:9 olarak
+ayarla, aksi halde yine kenarlardan kayıp yaşarız.
+
+KARAKTER TUTARLILIĞI:
+Referans olarak yüklediğin görsellerdeki (ref-umay-kagan-tamboy,
+ref-umay-kagan-yuz) Umay ve Kağan'ın yüz hatları, saç şekli ve kıyafet
+detayları AYNEN korunmalı. Her promptta bunu hatırlatan bir cümle var,
+ayrıca modelin referanssız kalırsa da doğru üretmesi için karakterlerin
+sözel tarifi de metne gömülü.
+
+Ortak stil notu (zaten her promptun sonunda var, referans için):
+"Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark."
+
+==================================================================
+1) KURŞUNİ BOZKIR VE YALNIZLIK — [Manzara / açılış]
+Referans: ref-umay-kagan-tamboy, ref-kapak-stil
+------------------------------------------------------------------
+A vast, bleak steppe landscape stretching to the horizon under a heavy
+grey overcast sky, cold and lonely atmosphere, barren cracked earth,
+leafless twisted lone trees. Two small silhouetted children stand
+together on a low hill in the mid-distance looking out at the empty
+horizon: a girl with two long braids and a fur-trimmed pointed hat
+(Umay), and a boy in a dark tunic with a wide sash belt (Kağan) — match
+their exact silhouette proportions and costume shapes to the reference
+images. Muted browns and greys, one thin distant shaft of soft golden
+light on the horizon hinting at hope.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+2) UMAY VE KAĞAN'IN HÜZNÜ — [Karakter / yakın çekim]
+Referans: ref-umay-kagan-yuz, ref-umay-kagan-tamboy
+------------------------------------------------------------------
+Close-up portrait of two sibling children inside a dim traditional felt
+yurt, warm candlelight glowing on their faces. On the left, a young girl
+(Umay) with two long dark braids, a fur-trimmed pointed hat with a
+pom-pom, red and gold embroidered kaftan with turquoise trim, gentle
+worried expression — match her face and costume exactly to the
+reference images. On the right, a young boy (Kağan) with messy dark
+brown hair, teal fur-collared tunic, wide mustard-yellow sash belt with
+a round buckle, holding his sister's hand with a determined comforting
+look — match his face and costume exactly to the reference images.
+Soft watercolor texture, intimate folk aesthetic.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+3) GÖK YÜZÜNE ÇAĞRI — [Manzara]
+Referans: ref-umay-kagan-tamboy
+------------------------------------------------------------------
+Wide landscape shot of the same two children (Umay with braids and fur
+hat, Kağan with teal tunic and yellow sash — matching the reference
+images exactly) standing on the bleak steppe, small in the frame,
+looking up with wide eyes and open mouths in awe. Above them, heavy
+grey storm clouds are just beginning to split apart, with thin sharp
+shafts of golden sunlight piercing through the gap. Mood of anticipation
+and wonder. Deep blue-grey clouds transitioning to warm gold light.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+4) TURUL KUŞU'NUN HEYBETİ — [Karakter / kahraman girişi]
+Referans: ref-turul-1, ref-turul-2, ref-umay-kagan-tamboy
+------------------------------------------------------------------
+Majestic medium shot of the legendary giant Turul bird — match its
+exact design to the reference images: shimmering copper and gold
+feathers, turquoise face markings, glowing sun and crescent-moon tamga
+symbols on its wings, a beaded jeweled ornament across its chest, wise
+powerful amber eyes. The bird has just landed, wings still spread, on
+the open steppe at dusk. The two children (Umay and Kağan, matching
+their reference designs exactly) are climbing gently onto its back,
+small hands gripping the soft feathers, faces full of wonder and
+courage. Twilight sky behind them, deep blue fading to gold at the
+horizon.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+5) KUTSAL VADİYE UÇUŞ — [Manzara]
+Referans: ref-turul-1, ref-kutsal-vadi-sunak
+------------------------------------------------------------------
+Wide epic landscape view from high above: the giant Turul bird (copper
+and gold feathers, turquoise face markings, matching the reference
+image exactly) flying across the sky with the two small children
+gripping the feathers on its back, silhouetted against the clouds. Far
+below, ancient misty mountains and a hidden green valley come into
+view. Grand cinematic scale, magical atmosphere. Deep blues, purples,
+and warm gold light breaking through clouds.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+6) KADİM SUNAK VE DAVUL — [Manzara / tarihî mekân]
+Referans: ref-kutsal-vadi-sunak
+------------------------------------------------------------------
+A hidden sacred valley landscape, matching the composition and mood of
+the reference image: ancient tall standing stones (balbal-style menhirs)
+carved with glowing turquoise Turkic tamga symbols, a moss-covered stone
+altar at the center of the clearing. On the altar rests a large
+traditional shaman frame drum, its leather surface decorated with sun
+and star patterns, a wooden drum stick beside it. The giant Turul bird
+rests nearby on a rock outcrop, wings folded. No characters in the
+immediate foreground — this is an establishing shot of the sacred place
+itself. Deep green moss, warm brown stone, mysterious turquoise glow.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+7) DAVULU KEŞİF — [Karakter / nesne yakın çekim]
+Referans: ref-umay-kagan-yuz, ref-kutsal-vadi-sunak
+------------------------------------------------------------------
+Close-up shot of the ancient shaman drum resting on the mossy stone
+altar, its leather surface detailed with faded ancient patterns glowing
+faintly with warm light from within the symbols. The boy Kağan (messy
+dark hair, teal tunic, yellow sash — matching reference exactly) holds
+a wooden drum stick with a determined grip. The girl Umay (braids, fur
+hat, red kaftan — matching reference exactly) gently touches the edge
+of the drum with her fingertips, an expression of quiet reverence and
+curiosity on her face. Warm golden glow, soft magical particles in the
+air.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+8) UMAY'IN NİNNİSİ — [Karakter / duygusal zirve]
+Referans: ref-umay-kagan-yuz, ref-kutsal-vadi-sunak
+------------------------------------------------------------------
+The girl Umay (two long braids, fur-trimmed hat, red and gold kaftan —
+matching the reference image exactly) sits among the mossy stones in
+the sacred valley, eyes gently closed as she sings, a handful of
+small glowing golden seeds cupped in her palms. A soft turquoise light
+envelops her and the seeds, gentle light particles drifting upward. The
+boy Kağan (teal tunic, yellow sash — matching reference exactly) stands
+close beside her, holding the shaman drum, watching her with quiet awe.
+Magical, ethereal, tender atmosphere.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+9) BAHARIN İLK ÇİÇEĞİ — [Doğa / makro, karaktersiz]
+Referans: ref-cicekli-bozkir
+------------------------------------------------------------------
+Macro close-up shot, ground level: from the cold cracked steppe earth, a
+single vibrant fantasy flower blooms rapidly, delicate petals catching
+turquoise and gold highlights, morning dew droplets sparkling on the
+petals. Warm golden sunlight rakes across the ground. A visual
+transformation from cold barren earth to vivid new life. No characters
+in frame. Highly detailed watercolor texture.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+10) ÇİÇEKLENEN BOZKIR DANSI — [Manzara / neşe zirvesi]
+Referans: ref-cicekli-bozkir, ref-umay-kagan-tamboy, ref-turul-1
+------------------------------------------------------------------
+Wide joyful landscape: the vast steppe now completely covered in a
+vibrant carpet of colorful fantasy flowers in turquoise, yellow, and
+purple. The two children Umay and Kağan (matching their reference
+designs exactly) run through the flower fields with arms outstretched,
+laughing, small in the wide frame. The friendly Turul bird glides low
+in the distance behind them. A flock of cranes flies overhead in a "V"
+formation against a bright blue sky. Bright cheerful sunny spring day,
+warm hopeful atmosphere.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+11) YILKI ATLARININ DÖNÜŞÜ — [Manzara / özgürlük, karaktersiz]
+Referans: ref-oba-bozkir
+------------------------------------------------------------------
+Wide landscape: a green, flower-covered steppe under gentle morning
+sunlight. A herd of wild "yılkı" horses, led by a magnificent luminous
+white stallion, gallops freely toward the horizon, manes streaming.
+In the far distance, a traditional nomad camp (oba) of round white felt
+yurts is visible, matching the style of the reference image. No
+characters in the foreground. A strong sense of freedom and restoration.
+Turkic folk art style, warm golden light.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
+
+==================================================================
+12) ŞAFAK VE SONSUZ BAHAR — [Manzara / huzurlu kapanış]
+Referans: ref-umay-kagan-tamboy, ref-turul-1, ref-oba-bozkir
+------------------------------------------------------------------
+Wide peaceful landscape: the two children Umay and Kağan (matching their
+reference designs exactly) sit together on a green hill among blooming
+flowers, backs mostly to camera, looking out at the view. The giant
+Turul bird rests beside them, wings folded, matching its reference
+design exactly. Traditional white felt yurts of the nomad camp are
+visible in the middle distance. The sun is setting on the horizon,
+casting a warm golden and soft purple glow across the entire landscape.
+Peaceful, cozy, fairytale atmosphere, no text.
+Children's book illustration style, Central Asian folklore art, warm
+fairytale aesthetic, watercolor and digital art blend, soft magical
+lighting, rich textures, consistent Turkic blue (turquoise), gold,
+copper, and deep green colors. 16:9 horizontal landscape orientation,
+no text, no watermark.
