@@ -97,6 +97,9 @@ const LoulanGuzeliWithOutro: React.FC = () => (
 const LoulanGuzeliV2WithOutro: React.FC = () => (
   <FilmWithOutro film={<LoulanGuzeliV2Film />} filmFrames={LOULAN_GUZELI_V2_DURATION_FRAMES} />
 );
+const TaidulaEpicWithOutro: React.FC = () => (
+  <FilmWithOutro film={<TaidulaEpicFilm />} filmFrames={TAIDULA_EPIC_DURATION_FRAMES} />
+);
 
 export const RemotionRoot: React.FC = () => {
   return (
@@ -216,13 +219,14 @@ export const RemotionRoot: React.FC = () => {
         height={ORUMCEK_ADAM_VIDEO_CONFIG.height}
       />
 
-      {/* "TAIDULA — Buz Altında Bir Hükümdar" — uzun format (16:9, ~5dk)
-          belgesel denemesi. Seriden ayrı bir yapı (20 segmentlik crossfade
-          montaj) — henüz kapanış imzası eklenmedi. */}
+      {/* "TAIDULA — Buz Altında Bir Hükümdar" — uzun format (16:9, ~8:28)
+          belgesel denemesi. Seriden ayrı bir yapı (24 segmentlik crossfade
+          montaj), sonuna diğer seri filmleriyle aynı GÖKUMAY kapanış
+          imzası eklendi. */}
       <Composition
         id="TaidulaEpic"
-        component={TaidulaEpicFilm}
-        durationInFrames={TAIDULA_EPIC_DURATION_FRAMES}
+        component={TaidulaEpicWithOutro}
+        durationInFrames={TAIDULA_EPIC_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
         fps={TAIDULA_EPIC_FPS}
         width={TAIDULA_EPIC_WIDTH}
         height={TAIDULA_EPIC_HEIGHT}
