@@ -12,16 +12,18 @@ import { VideoSegment } from './components/VideoSegment';
 import { ImageSegment } from './components/ImageSegment';
 
 /**
- * Her segment FINAL timeline'da 15sn (450 frame) yer kaplar.
+ * Her segmentin FINAL süresi kendi durationInSeconds değerinden hesaplanır:
+ * finalFrames = (durationInSeconds × HAM_FPS) / SLOWDOWN_FACTOR
  *
- * Video segmentleri için playbackRate (segment.customPlaybackRate ??
- * SLOWDOWN_FACTOR) ile OffthreadVideo, ham içeriği 450 frame'e yayarak
- * doğal yavaş çekim üretir. Görsel segmentlerde Ken Burns efekti doğrudan
- * 450 frame üzerinden hesaplanır.
+ * Video segmentleri hep 10s ham bildirir (Google Flow'un fiziksel klip
+ * uzunluğu) → playbackRate (segment.customPlaybackRate ?? SLOWDOWN_FACTOR)
+ * ile bu ham içerik final süreye doğal yavaş çekimle yayılır.
+ * Görsellerde "playbackRate" kavramı yok — Ken Burns efekti doğrudan o
+ * segmentin kendi (değişken, daha uzun) final frame sayısı üzerinden
+ * hesaplanır.
  */
-
-const HAM_DURATION_FRAMES = 10 * HAM_FPS; // 300
-export const FINAL_SEGMENT_FRAMES = Math.round(HAM_DURATION_FRAMES / SLOWDOWN_FACTOR); // ~450
+export const finalFramesFor = (durationInSeconds: number) =>
+  Math.round((durationInSeconds * HAM_FPS) / SLOWDOWN_FACTOR);
 
 export const Timeline: React.FC = () => {
   return (
@@ -29,10 +31,11 @@ export const Timeline: React.FC = () => {
       <TransitionSeries>
         {segments.map((segment, index) => {
           const isLast = index === segments.length - 1;
+          const segmentFinalFrames = finalFramesFor(segment.durationInSeconds);
 
           return (
             <React.Fragment key={segment.id}>
-              <TransitionSeries.Sequence durationInFrames={FINAL_SEGMENT_FRAMES}>
+              <TransitionSeries.Sequence durationInFrames={segmentFinalFrames}>
                 {segment.type === 'video' ? (
                   <VideoSegment
                     src={segment.src}
@@ -43,7 +46,7 @@ export const Timeline: React.FC = () => {
                   <ImageSegment
                     src={segment.src}
                     direction={segment.kenBurns ?? 'zoom-in'}
-                    durationInFrames={FINAL_SEGMENT_FRAMES}
+                    durationInFrames={segmentFinalFrames}
                   />
                 )}
               </TransitionSeries.Sequence>
