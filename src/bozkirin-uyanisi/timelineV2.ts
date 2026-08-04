@@ -39,6 +39,14 @@ const VID = 'videos/bozkirin-uyanisi';
 
 export const CROSSFADE_FRAMES = 15;
 
+// Anlatım ses dosyası (bozkirin-uyanisi-anlatim-v2.mp3) doğrudan sayfa 2
+// içeriğiyle t=0'da başlıyor (splice sırasında öne sessizlik eklenmedi).
+// Kapak + interstitial1'in ekranda kaldığı süre kadar (5s + 20s = 750
+// frame) <Audio> bileşeni bir <Sequence from={NARRATION_START_FRAME}>
+// içine alınmalı — aksi halde anlatım videoyla 25 saniye erken/kaymış
+// çalar (bkz. segments[2] "page2", startFrame: 750).
+export const NARRATION_START_FRAME = 750;
+
 export const segments: TimelineSegment[] = [
   { kind: 'storybook', src: `${IMG}/page-01.jpg`, kenBurns: 'zoom-in', startFrame: 0, endFrame: 150 },
   { kind: 'image', src: `${IMG2}/gorsel-01-kursuni-bozkir.jpg`, kenBurns: 'zoom-in', startFrame: 150, endFrame: 750 },

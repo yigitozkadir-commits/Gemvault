@@ -21,6 +21,7 @@ import {
   GUM_TRIPLE_FRAME,
   NARRATED_RANGES,
   EXTRA_LINES,
+  NARRATION_START_FRAME,
 } from './timelineV2';
 import { BOZKIRIN_UYANISI_CAPTIONS_V2 } from '../data/bozkirinUyanisiCaptionsV2';
 
@@ -209,8 +210,14 @@ export const BozkirinUyanisiFilmV2: React.FC = () => {
         <AnimatedCaptions cues={BOZKIRIN_UYANISI_CAPTIONS_V2} bottomOffsetRatio={0.035} />
       </AbsoluteFill>
 
-      {/* Anlatım — sayfalar arası sessizlikler zaten ses dosyasına splice edildi */}
-      <Audio src={staticFile(NARRATION_SRC)} volume={NARRATION_VOLUME} />
+      {/* Anlatım — sayfalar arası sessizlikler zaten ses dosyasına splice edildi.
+          Dosya doğrudan sayfa 2 içeriğiyle t=0'da başladığı için, kapak +
+          interstitial1'in ekranda kaldığı NARRATION_START_FRAME kadar
+          geciktirilmeli — bu Sequence olmadan anlatım 25 saniye erken
+          çalıyordu (bkz. timelineV2.ts). */}
+      <Sequence from={NARRATION_START_FRAME}>
+        <Audio src={staticFile(NARRATION_SRC)} volume={NARRATION_VOLUME} />
+      </Sequence>
 
       {/* Ek kısa konuşmalar — ana yapıyı bozmadan, ara sahnelerin zaten
           sessiz olan kısımlarına eklendi (bkz. timelineV2.ts EXTRA_LINES) */}
