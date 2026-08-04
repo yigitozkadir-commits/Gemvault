@@ -20,6 +20,7 @@ import {
   GUM_FRAME,
   GUM_TRIPLE_FRAME,
   NARRATED_RANGES,
+  EXTRA_LINES,
 } from './timelineV2';
 import { BOZKIRIN_UYANISI_CAPTIONS_V2 } from '../data/bozkirinUyanisiCaptionsV2';
 
@@ -174,7 +175,13 @@ export const BozkirinUyanisiFilmV2: React.FC = () => {
         );
       })}
 
-      {/* Karakter ara görselleri — sayfa akışını kesmeden kısa bindirme */}
+      {/* Karakter ara görselleri — sayfa akışını kesmeden kısa bindirme.
+          zIndex: segment katmanı en fazla `segments.length` değerine kadar
+          çıkıyor (crossfade z-index yığını), o yüzden cutaway'ler ve
+          altyazılar bunun ÜSTÜNDE sabit, yüksek bir zIndex ile
+          konumlandırılmalı — aksi halde segment katmanının arkasında
+          kalıp hiç görünmezler (bu tam olarak altyazıların video boyunca
+          hiç görünmemesine yol açan köke inen sebepti). */}
       {cutaways.map((c) => {
         const dur = c.endFrame - c.startFrame;
         const fadeEdge = Math.min(10, Math.floor(dur / 4));
@@ -190,7 +197,7 @@ export const BozkirinUyanisiFilmV2: React.FC = () => {
         );
         if (op <= 0) return null;
         return (
-          <AbsoluteFill key={c.src + c.startFrame} style={{ opacity: op }}>
+          <AbsoluteFill key={c.src + c.startFrame} style={{ opacity: op, zIndex: 9000 }}>
             <Sequence from={c.startFrame} durationInFrames={dur}>
               <ImageSegment src={c.src} direction="zoom-in" durationInFrames={dur} />
             </Sequence>
@@ -198,10 +205,20 @@ export const BozkirinUyanisiFilmV2: React.FC = () => {
         );
       })}
 
-      <AnimatedCaptions cues={BOZKIRIN_UYANISI_CAPTIONS_V2} bottomOffsetRatio={0.035} />
+      <AbsoluteFill style={{ zIndex: 9999 }}>
+        <AnimatedCaptions cues={BOZKIRIN_UYANISI_CAPTIONS_V2} bottomOffsetRatio={0.035} />
+      </AbsoluteFill>
 
       {/* Anlatım — sayfalar arası sessizlikler zaten ses dosyasına splice edildi */}
       <Audio src={staticFile(NARRATION_SRC)} volume={NARRATION_VOLUME} />
+
+      {/* Ek kısa konuşmalar — ana yapıyı bozmadan, ara sahnelerin zaten
+          sessiz olan kısımlarına eklendi (bkz. timelineV2.ts EXTRA_LINES) */}
+      {EXTRA_LINES.map((line) => (
+        <Sequence key={line.src} from={line.startFrame} durationInFrames={300}>
+          <Audio src={staticFile(line.src)} volume={NARRATION_VOLUME} />
+        </Sequence>
+      ))}
 
       {/* Arka plan müziği — ducking'li */}
       <Audio src={staticFile(MUSIC_SRC)} volume={musicVolume} />

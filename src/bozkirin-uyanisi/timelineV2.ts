@@ -81,14 +81,31 @@ export const GUM_TRIPLE_FRAME = 6094;
 
 // Sayfa segmentlerinin (kind==='storybook' VE gerçek anlatım içeren, yani
 // kapak/arka kapak hariç) aralıkları — müzik ducking için kullanılır.
+// Ek 3 kısa konuşma (ara sahnelerin içine, ana yapıyı bozmadan eklendi)
+// da buraya dahil, böylece müzik onların altında da kısılıyor.
 export const NARRATED_RANGES: [number, number][] = [
+  [210, 430], // ek: "Bozkır bize bir şey anlatmaya çalışıyor..."
   [750, 1920],
   [2640, 3743],
   [4703, 5611],
   [5611, 6496],
   [6496, 7393],
+  [7783, 8011], // ek: "Doğa, birlikte yaşadığımız büyük bir ailedir."
   [8293, 9153],
   [9873, 10801],
   [11581, 12453],
   [12453, 13377],
+  [13617, 13858], // ek: kapanış sözü
+];
+
+// Ek konuşma ses dosyaları — mevcut sayfa yapısını bozmadan, zaten
+// müzik-only olan ara sahnelerin sessiz kısımlarına yerleştirildi.
+export interface ExtraLine {
+  src: string;
+  startFrame: number;
+}
+export const EXTRA_LINES: ExtraLine[] = [
+  { src: 'audio/bozkirin-uyanisi-extra/extra1-bozkir-firsati.mp3', startFrame: 210 },
+  { src: 'audio/bozkirin-uyanisi-extra/extra2-buyuk-aile.mp3', startFrame: 7783 },
+  { src: 'audio/bozkirin-uyanisi-extra/extra3-kapanis-sozu.mp3', startFrame: 13617 },
 ];
