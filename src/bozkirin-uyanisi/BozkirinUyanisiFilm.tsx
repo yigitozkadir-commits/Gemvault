@@ -13,6 +13,15 @@ export const BOZKIRIN_UYANISI_DURATION_FRAMES = TOTAL_FRAMES;
 const INTRO_FADE_FRAMES = 20;
 const OUTRO_FADE_FRAMES = 30;
 const NARRATION_SRC = 'audio/bozkirin-uyanisi-anlatim.mp3';
+const MUSIC_SRC = 'audio/bozkirin-uyanisi-muzik.mp3';
+
+// Ses miksaj rehberindeki ducking mantığı: anlatım sürerken müzik kısık
+// (%25), sessizlik anlarında (giriş/kapanış) müzik daha belirgin (%65).
+const MUSIC_DUCK_VOLUME = 0.25;
+const MUSIC_SOLO_VOLUME = 0.65;
+const DUCK_RAMP_FRAMES = 30;
+const NARRATION_START_FRAME = pages.find((p) => p.id === 2)!.startFrame; // 152
+const NARRATION_END_FRAME = pages.find((p) => p.id === 10)!.endFrame; // 8697
 
 /**
  * "Bozkırın Uyanışı — Umay ve Kağan'ın Destanı" — Video Master Planı'ndaki
@@ -36,9 +45,15 @@ const NARRATION_SRC = 'audio/bozkirin-uyanisi-anlatim.mp3';
  *  - 3x10sn Google Flow AI video sahnesi (bulutların yarılması, tohum/çiçek
  *    dönüşümü, buzun kırılması) — şu an o anlarda ilgili sayfa görseli
  *    devam ediyor, kesinti/siyah kare yok.
- *  - Arka plan müziği ve SFX katmanları (rehber dokümanındaki faz/BPM
- *    planına göre) — şu an sessiz, sadece anlatım var.
  *  - "GÜM!" davul vuruşu efekti (sayfa 5, ~03:45).
+ *
+ * ARKA PLAN MÜZİĞİ: ElevenLabs Music API (POST /v1/music) ile, ses
+ * rehberindeki "Tam Parça Atmosferi" master prompt'unun İngilizce
+ * uyarlamasıyla, videonun tam süresine (294.9sn) birebir uzunlukta tek
+ * parça olarak üretildi — soğuk/yalnız açılıştan mistik davul/vokal
+ * katmanına, coşkulu tam orkestra doruğuna, sıcak ninni kapanışına kadar
+ * tüm yayı tek promptla kapsıyor. Ducking: anlatım süresince %25, giriş/
+ * kapanışta %65 (bkz. MUSIC_DUCK_VOLUME/MUSIC_SOLO_VOLUME).
  */
 export const BozkirinUyanisiFilm: React.FC = () => {
   const frame = useCurrentFrame();
@@ -54,6 +69,27 @@ export const BozkirinUyanisiFilm: React.FC = () => {
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
   );
   const globalOpacity = Math.min(introFade, outroFade);
+
+  let musicVolume: number;
+  if (frame <= NARRATION_START_FRAME) {
+    musicVolume = interpolate(
+      frame,
+      [NARRATION_START_FRAME - DUCK_RAMP_FRAMES, NARRATION_START_FRAME],
+      [MUSIC_SOLO_VOLUME, MUSIC_DUCK_VOLUME],
+      { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+    );
+  } else if (frame < NARRATION_END_FRAME) {
+    musicVolume = MUSIC_DUCK_VOLUME;
+  } else {
+    musicVolume = interpolate(
+      frame,
+      [NARRATION_END_FRAME, NARRATION_END_FRAME + DUCK_RAMP_FRAMES],
+      [MUSIC_DUCK_VOLUME, MUSIC_SOLO_VOLUME],
+      { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }
+    );
+  }
+  // Global giriş/çıkış fade'i müziğe de uygulanır.
+  musicVolume *= Math.min(introFade, outroFade);
 
   return (
     <AbsoluteFill style={{ backgroundColor: '#0a0a08', opacity: globalOpacity }}>
@@ -93,6 +129,7 @@ export const BozkirinUyanisiFilm: React.FC = () => {
       <AnimatedCaptions cues={BOZKIRIN_UYANISI_CAPTIONS} />
 
       <Audio src={staticFile(NARRATION_SRC)} volume={1} />
+      <Audio src={staticFile(MUSIC_SRC)} volume={musicVolume} />
     </AbsoluteFill>
   );
 };
