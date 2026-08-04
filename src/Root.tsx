@@ -16,6 +16,13 @@ import { OrumcekAdamFilm } from "./scenes/OrumcekAdam";
 import { UkokPrensesiFilm } from "./scenes/UkokPrensesi";
 import { LoulanGuzeliFilm } from "./scenes/LoulanGuzeli";
 import { LoulanGuzeliV2Film } from "./scenes/LoulanGuzeliV2";
+import {
+  TaidulaEpicFilm,
+  TAIDULA_EPIC_DURATION_FRAMES,
+  TAIDULA_EPIC_FPS,
+  TAIDULA_EPIC_WIDTH,
+  TAIDULA_EPIC_HEIGHT,
+} from "./taidula-epic/TaidulaEpicFilm";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -193,6 +200,18 @@ export const RemotionRoot: React.FC = () => {
         fps={ORUMCEK_ADAM_VIDEO_CONFIG.fps}
         width={ORUMCEK_ADAM_VIDEO_CONFIG.width}
         height={ORUMCEK_ADAM_VIDEO_CONFIG.height}
+      />
+
+      {/* "TAIDULA — Buz Altında Bir Hükümdar" — uzun format (16:9, ~5dk)
+          belgesel denemesi. Seriden ayrı bir yapı (20 segmentlik crossfade
+          montaj) — henüz kapanış imzası eklenmedi. */}
+      <Composition
+        id="TaidulaEpic"
+        component={TaidulaEpicFilm}
+        durationInFrames={TAIDULA_EPIC_DURATION_FRAMES}
+        fps={TAIDULA_EPIC_FPS}
+        width={TAIDULA_EPIC_WIDTH}
+        height={TAIDULA_EPIC_HEIGHT}
       />
     </>
   );
