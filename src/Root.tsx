@@ -23,6 +23,13 @@ import {
   TAIDULA_EPIC_WIDTH,
   TAIDULA_EPIC_HEIGHT,
 } from "./taidula-epic/TaidulaEpicFilm";
+import {
+  BozkirinUyanisiFilm,
+  BOZKIRIN_UYANISI_DURATION_FRAMES,
+  BOZKIRIN_UYANISI_FPS,
+  BOZKIRIN_UYANISI_WIDTH,
+  BOZKIRIN_UYANISI_HEIGHT,
+} from "./bozkirin-uyanisi/BozkirinUyanisiFilm";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -212,6 +219,19 @@ export const RemotionRoot: React.FC = () => {
         fps={TAIDULA_EPIC_FPS}
         width={TAIDULA_EPIC_WIDTH}
         height={TAIDULA_EPIC_HEIGHT}
+      />
+
+      {/* "Bozkırın Uyanışı — Umay ve Kağan'ın Destanı" — Gök Umay Çocuk
+          Kitapları serisinin ilk resimli kitap videosu. Şu an sadece PDF
+          sayfaları + tam seslendirme; AI video eklentileri ve müzik/SFX
+          sonraki adımda eklenecek. */}
+      <Composition
+        id="BozkirinUyanisi"
+        component={BozkirinUyanisiFilm}
+        durationInFrames={BOZKIRIN_UYANISI_DURATION_FRAMES}
+        fps={BOZKIRIN_UYANISI_FPS}
+        width={BOZKIRIN_UYANISI_WIDTH}
+        height={BOZKIRIN_UYANISI_HEIGHT}
       />
     </>
   );

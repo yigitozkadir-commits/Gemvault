@@ -19,6 +19,7 @@
     "build:loulan": "remotion render src/index.ts LoulanGuzeli out/loulan-guzeli.mp4",
     "build:loulan-v2": "remotion render src/index.ts LoulanGuzeliV2 out/loulan-guzeli-v2.mp4",
     "build:taidula-epic": "remotion render src/index.ts TaidulaEpic out/taidula-epic.mp4",
+    "build:bozkirin-uyanisi": "remotion render src/index.ts BozkirinUyanisi out/bozkirin-uyanisi.mp4",
     "upgrade": "remotion upgrade"
   },
   "dependencies": {
