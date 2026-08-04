@@ -76,7 +76,15 @@ const Word: React.FC<{ word: CaptionWord; fontSize: number }> = ({ word, fontSiz
   );
 };
 
-export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => {
+export const AnimatedCaptions: React.FC<{
+  cues: CaptionCue[];
+  /** Yazı bloğunun alt kenardan uzaklığı (yüksekliğin oranı olarak).
+   *  Varsayılan 0.13 — dikey Instagram/Reels videolarındaki "%10 yukarı"
+   *  konumu. Resimli kitap gibi görselin tüm kadrajı doldurduğu 16:9
+   *  yapımlarda daha alta (örn. 0.03) çekilerek yüzlerin üstünü kapatması
+   *  engellenebilir. */
+  bottomOffsetRatio?: number;
+}> = ({ cues, bottomOffsetRatio = 0.13 }) => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
 
@@ -107,7 +115,10 @@ export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => 
   // Yazı bloğu hem %20 büyüdüğü hem de %10 yukarı kaydığı için, altındaki
   // karartma/vignette gradyanı da orantılı olarak büyütüldü — aksi halde
   // büyümüş metnin üst kısmı gradyansız (düz video üzerinde) kalırdı.
-  const gradientHeight = height * (170 / 1080) * 1.2 + height * 0.1;
+  // (bottomOffsetRatio - 0.03) sayesinde varsayılan 0.13'te bu ifade tam olarak
+  // eski "+ height * 0.1" değerine eşit kalır — mevcut videoların görüntüsü
+  // değişmez, sadece offset değiştirildiğinde gradyan da onunla birlikte kayar.
+  const gradientHeight = height * (170 / 1080) * 1.2 + height * (bottomOffsetRatio - 0.03);
 
   const cueLocalIn = frame - active.startFrame;
   const cueLocalOut = frame - active.endFrame;
@@ -135,7 +146,7 @@ export const AnimatedCaptions: React.FC<{ cues: CaptionCue[] }> = ({ cues }) => 
           justifyContent: "flex-end",
           alignItems: "center",
           // Ekstra talep üzerine format %10 yukarı kaydırıldı (0.03 -> 0.13).
-          paddingBottom: height * 0.13,
+          paddingBottom: height * bottomOffsetRatio,
           opacity: blockOpacity,
         }}
       >

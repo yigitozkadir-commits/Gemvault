@@ -1,6 +1,6 @@
 import React from 'react';
 import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame } from 'remotion';
-import { ImageSegment } from '../taidula-epic/components/ImageSegment';
+import { StorybookPage } from './components/StorybookPage';
 import { AnimatedCaptions } from '../components/AnimatedCaptions';
 import { pages, CROSSFADE_FRAMES, TOTAL_FRAMES } from './pages';
 import { BOZKIRIN_UYANISI_CAPTIONS } from '../data/bozkirinUyanisiCaptions';
@@ -120,13 +120,13 @@ export const BozkirinUyanisiFilm: React.FC = () => {
         return (
           <AbsoluteFill key={page.id} style={{ opacity: pageOpacity }}>
             <Sequence from={page.startFrame} durationInFrames={duration}>
-              <ImageSegment src={page.src} direction={page.kenBurns} durationInFrames={duration} />
+              <StorybookPage src={page.src} direction={page.kenBurns} durationInFrames={duration} />
             </Sequence>
           </AbsoluteFill>
         );
       })}
 
-      <AnimatedCaptions cues={BOZKIRIN_UYANISI_CAPTIONS} />
+      <AnimatedCaptions cues={BOZKIRIN_UYANISI_CAPTIONS} bottomOffsetRatio={0.035} />
 
       <Audio src={staticFile(NARRATION_SRC)} volume={1} />
       <Audio src={staticFile(MUSIC_SRC)} volume={musicVolume} />
