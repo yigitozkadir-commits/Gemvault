@@ -34,9 +34,10 @@ const NARRATION_SRC = 'audio/bozkirin-uyanisi-anlatim-v2.mp3';
 const MUSIC_SRC = 'audio/bozkirin-uyanisi-muzik-uzun.mp3';
 const SFX = 'audio/sfx';
 
-const MUSIC_DUCK_VOLUME = 0.1;
-const MUSIC_SOLO_VOLUME = 0.5;
+const MUSIC_DUCK_VOLUME = 0.05;
+const MUSIC_SOLO_VOLUME = 0.25;
 const DUCK_RAMP_FRAMES = 25;
+const NARRATION_VOLUME = 1.5;
 
 const isNarrating = (frame: number) =>
   NARRATED_RANGES.some(([s, e]) => frame >= s && frame < e);
@@ -200,7 +201,7 @@ export const BozkirinUyanisiFilmV2: React.FC = () => {
       <AnimatedCaptions cues={BOZKIRIN_UYANISI_CAPTIONS_V2} bottomOffsetRatio={0.035} />
 
       {/* Anlatım — sayfalar arası sessizlikler zaten ses dosyasına splice edildi */}
-      <Audio src={staticFile(NARRATION_SRC)} volume={1} />
+      <Audio src={staticFile(NARRATION_SRC)} volume={NARRATION_VOLUME} />
 
       {/* Arka plan müziği — ducking'li */}
       <Audio src={staticFile(MUSIC_SRC)} volume={musicVolume} />
