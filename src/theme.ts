@@ -143,3 +143,19 @@ export const LOULAN_GUZELI_V2_VIDEO_CONFIG = {
 };
 
 export const LOULAN_GUZELI_V2_DURATION_FRAMES = 1769; // ~59sn @ 30fps
+
+// "Bozkır Hatunları" / Gök Umay serisi — Berel Hatun (Kurgan 11, Doğu
+// Kazakistan, Altay Dağları). Seride ilk kez üç ayrı 10sn Google Flow
+// klibi 12 kare crossfade ile birbirine bağlanıyor (tek uzun klip değil).
+// Kanca: birlikte gömülen kadın ve erkeğin akraba OLMADIĞININ genetik
+// olarak kanıtlanmış olması. Anlatım (~38.3sn) 3 sahnenin toplam süresini
+// (30sn) aştığı için üçüncü sahne (dağ manzarası) kendi son karesinde
+// donuyor, anlatım bitene kadar ekranda kalıyor. Yüz rekonstrüksiyon
+// verisi olmadığı için kapanışta dipnot var (bkz. berelHatunCaptions.ts).
+export const BEREL_HATUN_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const BEREL_HATUN_DURATION_FRAMES = 1239; // ~41.3sn @ 30fps

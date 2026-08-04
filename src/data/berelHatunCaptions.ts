@@ -1,0 +1,135 @@
+// ElevenLabs "with-timestamps" hizalamasından türetilmiştir (30fps) —
+// gerçek kelime-bazlı zaman kodlarıyla. Kaynak:
+// public/audio/berel_hatun_narration.mp3 — Deniz (Cing Hatun Narrator),
+// serinin ortak sesi (stability 0.54, style 0.18). "Berel Hatun" (Kurgan
+// 11, Doğu Kazakistan) — 7 cümlelik anlatım.
+import type { CaptionCue } from "../types/captions";
+
+export const BEREL_HATUN_CAPTIONS: CaptionCue[] = [
+  {
+    text: "Altay Dağları'nda, bir mezar odasında iki insan yan yana bulundu — bir kadın, bir erkek.",
+    startFrame: 1,
+    endFrame: 193,
+    words: [
+      { text: "Altay", startFrame: 1, endFrame: 13 },
+      { text: "Dağları'nda,", startFrame: 14, endFrame: 39 },
+      { text: "bir", startFrame: 40, endFrame: 46 },
+      { text: "mezar", startFrame: 47, endFrame: 56 },
+      { text: "odasında", startFrame: 58, endFrame: 77 },
+      { text: "iki", startFrame: 82, endFrame: 91 },
+      { text: "insan", startFrame: 92, endFrame: 106 },
+      { text: "yan", startFrame: 109, endFrame: 116 },
+      { text: "yana", startFrame: 118, endFrame: 123 },
+      { text: "bulundu", startFrame: 124, endFrame: 136 },
+      { text: "—", startFrame: 139, endFrame: 140 },
+      { text: "bir", startFrame: 141, endFrame: 147 },
+      { text: "kadın,", startFrame: 150, endFrame: 163 },
+      { text: "bir", startFrame: 164, endFrame: 171 },
+      { text: "erkek.", startFrame: 173, endFrame: 193 },
+    ],
+  },
+  {
+    text: "Herkes onları çift ya da akraba sandı.",
+    startFrame: 211,
+    endFrame: 293,
+    words: [
+      { text: "Herkes", startFrame: 211, endFrame: 228 },
+      { text: "onları", startFrame: 231, endFrame: 243 },
+      { text: "çift", startFrame: 244, endFrame: 252 },
+      { text: "ya", startFrame: 254, endFrame: 256 },
+      { text: "da", startFrame: 258, endFrame: 260 },
+      { text: "akraba", startFrame: 261, endFrame: 274 },
+      { text: "sandı.", startFrame: 275, endFrame: 293 },
+    ],
+  },
+  {
+    text: "Ama genetik testler başka bir şey söyledi: aralarında hiçbir kan bağı yoktu.",
+    startFrame: 306,
+    endFrame: 488,
+    words: [
+      { text: "Ama", startFrame: 306, endFrame: 319 },
+      { text: "genetik", startFrame: 325, endFrame: 337 },
+      { text: "testler", startFrame: 338, endFrame: 351 },
+      { text: "başka", startFrame: 353, endFrame: 363 },
+      { text: "bir", startFrame: 364, endFrame: 368 },
+      { text: "şey", startFrame: 370, endFrame: 375 },
+      { text: "söyledi:", startFrame: 376, endFrame: 397 },
+      { text: "aralarında", startFrame: 410, endFrame: 434 },
+      { text: "hiçbir", startFrame: 438, endFrame: 452 },
+      { text: "kan", startFrame: 455, endFrame: 461 },
+      { text: "bağı", startFrame: 463, endFrame: 468 },
+      { text: "yoktu.", startFrame: 470, endFrame: 488 },
+    ],
+  },
+  {
+    text: "Neden aynı mezara konduklarını hâlâ bilmiyoruz.",
+    startFrame: 502,
+    endFrame: 608,
+    words: [
+      { text: "Neden", startFrame: 502, endFrame: 514 },
+      { text: "aynı", startFrame: 517, endFrame: 527 },
+      { text: "mezara", startFrame: 528, endFrame: 537 },
+      { text: "konduklarını", startFrame: 539, endFrame: 564 },
+      { text: "hâlâ", startFrame: 569, endFrame: 582 },
+      { text: "bilmiyoruz.", startFrame: 584, endFrame: 608 },
+    ],
+  },
+  {
+    text: "Kadının bedeninde bulunan tek kesin iz, küçük bir parazitti — bize onun da, herkes gibi, hastalıklarla yaşadığını hatırlatıyor.",
+    startFrame: 621,
+    endFrame: 881,
+    words: [
+      { text: "Kadının", startFrame: 621, endFrame: 634 },
+      { text: "bedeninde", startFrame: 636, endFrame: 650 },
+      { text: "bulunan", startFrame: 651, endFrame: 663 },
+      { text: "tek", startFrame: 665, endFrame: 672 },
+      { text: "kesin", startFrame: 673, endFrame: 682 },
+      { text: "iz,", startFrame: 684, endFrame: 693 },
+      { text: "küçük", startFrame: 699, endFrame: 710 },
+      { text: "bir", startFrame: 711, endFrame: 715 },
+      { text: "parazitti", startFrame: 717, endFrame: 739 },
+      { text: "—", startFrame: 744, endFrame: 745 },
+      { text: "bize", startFrame: 748, endFrame: 755 },
+      { text: "onun", startFrame: 758, endFrame: 766 },
+      { text: "da,", startFrame: 767, endFrame: 777 },
+      { text: "herkes", startFrame: 783, endFrame: 797 },
+      { text: "gibi,", startFrame: 798, endFrame: 812 },
+      { text: "hastalıklarla", startFrame: 815, endFrame: 838 },
+      { text: "yaşadığını", startFrame: 840, endFrame: 852 },
+      { text: "hatırlatıyor.", startFrame: 853, endFrame: 881 },
+    ],
+  },
+  {
+    text: "Yüzünü bilmiyoruz.",
+    startFrame: 893,
+    endFrame: 931,
+    words: [
+      { text: "Yüzünü", startFrame: 893, endFrame: 905 },
+      { text: "bilmiyoruz.", startFrame: 906, endFrame: 931 },
+    ],
+  },
+  {
+    text: "Ama yanına bırakılan altın griffin ve geyik figürleri, bu toprakların ustalığını hâlâ anlatıyor.",
+    startFrame: 942,
+    endFrame: 1149,
+    words: [
+      { text: "Ama", startFrame: 942, endFrame: 955 },
+      { text: "yanına", startFrame: 960, endFrame: 971 },
+      { text: "bırakılan", startFrame: 973, endFrame: 989 },
+      { text: "altın", startFrame: 992, endFrame: 1003 },
+      { text: "griffin", startFrame: 1005, endFrame: 1020 },
+      { text: "ve", startFrame: 1025, endFrame: 1030 },
+      { text: "geyik", startFrame: 1032, endFrame: 1039 },
+      { text: "figürleri,", startFrame: 1041, endFrame: 1064 },
+      { text: "bu", startFrame: 1069, endFrame: 1073 },
+      { text: "toprakların", startFrame: 1074, endFrame: 1094 },
+      { text: "ustalığını", startFrame: 1096, endFrame: 1111 },
+      { text: "hâlâ", startFrame: 1113, endFrame: 1123 },
+      { text: "anlatıyor.", startFrame: 1125, endFrame: 1149 },
+    ],
+  },
+];
+
+// Bilimsel dürüstlük dipnotu — kraniyofasiyal veri yok, görsel yorumlayıcı temsil.
+export const BEREL_HATUN_FOOTNOTE =
+  "Yüz ve kafatası verisi bulunmamaktadır; görsel yorumlayıcı bir temsildir.";

@@ -16,6 +16,7 @@ import { OrumcekAdamFilm } from "./scenes/OrumcekAdam";
 import { UkokPrensesiFilm } from "./scenes/UkokPrensesi";
 import { LoulanGuzeliFilm } from "./scenes/LoulanGuzeli";
 import { LoulanGuzeliV2Film } from "./scenes/LoulanGuzeliV2";
+import { BerelHatunFilm } from "./scenes/BerelHatun";
 import {
   TaidulaEpicFilm,
   TAIDULA_EPIC_DURATION_FRAMES,
@@ -61,6 +62,8 @@ import {
   LOULAN_GUZELI_DURATION_FRAMES,
   LOULAN_GUZELI_V2_VIDEO_CONFIG,
   LOULAN_GUZELI_V2_DURATION_FRAMES,
+  BEREL_HATUN_VIDEO_CONFIG,
+  BEREL_HATUN_DURATION_FRAMES,
 } from "./theme";
 
 // Her seri filminin sonuna GÖKUMAY kapanış imzası eklenir.
@@ -99,6 +102,9 @@ const LoulanGuzeliV2WithOutro: React.FC = () => (
 );
 const TaidulaEpicWithOutro: React.FC = () => (
   <FilmWithOutro film={<TaidulaEpicFilm />} filmFrames={TAIDULA_EPIC_DURATION_FRAMES} />
+);
+const BerelHatunWithOutro: React.FC = () => (
+  <FilmWithOutro film={<BerelHatunFilm />} filmFrames={BEREL_HATUN_DURATION_FRAMES} />
 );
 
 export const RemotionRoot: React.FC = () => {
@@ -207,6 +213,14 @@ export const RemotionRoot: React.FC = () => {
         fps={LOULAN_GUZELI_V2_VIDEO_CONFIG.fps}
         width={LOULAN_GUZELI_V2_VIDEO_CONFIG.width}
         height={LOULAN_GUZELI_V2_VIDEO_CONFIG.height}
+      />
+      <Composition
+        id="BerelHatun"
+        component={BerelHatunWithOutro}
+        durationInFrames={BEREL_HATUN_DURATION_FRAMES + SERIES_OUTRO_FRAMES}
+        fps={BEREL_HATUN_VIDEO_CONFIG.fps}
+        width={BEREL_HATUN_VIDEO_CONFIG.width}
+        height={BEREL_HATUN_VIDEO_CONFIG.height}
       />
 
       {/* Bozkır Hatunları serisinden bağımsız hobi projesi — kapanış imzası yok. */}
