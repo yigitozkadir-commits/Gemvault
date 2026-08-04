@@ -30,6 +30,13 @@ import {
   BOZKIRIN_UYANISI_WIDTH,
   BOZKIRIN_UYANISI_HEIGHT,
 } from "./bozkirin-uyanisi/BozkirinUyanisiFilm";
+import {
+  BozkirinUyanisiFilmV2,
+  BOZKIRIN_UYANISI_V2_DURATION_FRAMES,
+  BOZKIRIN_UYANISI_V2_FPS,
+  BOZKIRIN_UYANISI_V2_WIDTH,
+  BOZKIRIN_UYANISI_V2_HEIGHT,
+} from "./bozkirin-uyanisi/BozkirinUyanisiFilmV2";
 import { FilmWithOutro } from "./components/FilmWithOutro";
 import { SERIES_OUTRO_FRAMES } from "./components/SeriesOutro";
 import {
@@ -232,6 +239,17 @@ export const RemotionRoot: React.FC = () => {
         fps={BOZKIRIN_UYANISI_FPS}
         width={BOZKIRIN_UYANISI_WIDTH}
         height={BOZKIRIN_UYANISI_HEIGHT}
+      />
+
+      {/* "Bozkırın Uyanışı" v2 — 12 yeni statik görsel + 3 Google Flow AI
+          videosu + yeni kapanış videosuyla genişletilmiş tam kurgu. */}
+      <Composition
+        id="BozkirinUyanisiV2"
+        component={BozkirinUyanisiFilmV2}
+        durationInFrames={BOZKIRIN_UYANISI_V2_DURATION_FRAMES}
+        fps={BOZKIRIN_UYANISI_V2_FPS}
+        width={BOZKIRIN_UYANISI_V2_WIDTH}
+        height={BOZKIRIN_UYANISI_V2_HEIGHT}
       />
     </>
   );
