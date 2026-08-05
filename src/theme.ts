@@ -159,3 +159,19 @@ export const BEREL_HATUN_VIDEO_CONFIG = {
 };
 
 export const BEREL_HATUN_DURATION_FRAMES = 1239; // ~41.3sn @ 30fps
+
+// "Gök Umay" — "1916 Ürkün" (Kırgız halkının Çarlık Rusyası'na karşı
+// ayaklanması ve dağlar üzerinden zorunlu göçü). Bozkır Hatunları
+// serisinden bağımsız, anma/belgesel formatında bir Reels. Video klip
+// yok — 9 statik AI görsel (bazıları kendi üstüne gömülü başlık metniyle
+// üretilmiş), 8 sahneye "contain + bulanık zemin" tekniğiyle (bkz.
+// StorybookPage) hiç kırpılmadan yerleştiriliyor; sahne 7 iki görsel
+// kullanıyor (vadiye dönüş + güncel anma töreni). Sadece görsel + tek
+// parça anlatım (~1:40) — müzik/SFX yok (kullanıcı isteği).
+export const URKUN_VIDEO_CONFIG = {
+  width: 1080,
+  height: 1920,
+  fps: 30,
+};
+
+export const URKUN_DURATION_FRAMES = 3036; // ~101.2sn @ 30fps
